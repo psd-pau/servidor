@@ -23,6 +23,10 @@ El fil dels exemples va de `Cotxe` i `Motor` per explicar dependències a compta
 
 ## Seguiment i avaluació
 
+Hi ha una [[../../../fonts/practica-ut1-reports-2526|pràctica de Spring Core sobre gestió d'informes]], amb enunciat i proposta de solució del curs anterior. Reuneix interfícies i generadors, DI, scopes, cache, cicle de vida i inicialització diferida en un mateix cas. La fitxa documenta també les diferències entre els requisits i el codi rebut.
+
+El professor l'ha aportada com a activitat per practicar: complementa el code along i prepara l'examen, amb ponderació zero segons el criteri general del mòdul.
+
 Les activitats realitzades i les evidències d'avaluació es registraran durant el curs. La comparativa i el prototip que figuraven a la versió inicial de la wiki eren propostes genèriques, no activitats descrites pel professor. El code along queda documentat com a forma de treball; la seva ingesta no introdueix instruments ni ponderacions nous.
 
 ## Referències

@@ -1,5 +1,9 @@
 # Log
 
+## [2026-09-21] ingest | Pràctica d'U1 — Reports i proposta de solució
+
+S'han ingerit `Activitat Spring Core 2526 - Reports.txt` i `2526 solucio_practica_1.zip`, conservats a la carpeta de materials anteriors d'U1. La [[fonts/practica-ut1-reports-2526|fitxa de pràctica]] recull requisits, estructura de la solució i relació amb el code along. S'han documentat diferències de la còpia rebuda: marca d'aigua obligatòria, absència d'inicialització lazy a l'exportador i ús d'un mapa de generadors al servei comú. S'han actualitzat l'índex i U1. Revisió del codi font sense execució ni modificació dels originals.
+
 ## [2026-09-21] materials | Presentació inicial del mòdul
 
 S'ha creat la [[presentacio-modul|presentació de 18 diapositives]] en PPTX editable i PDF amb la skill visual del centre i autoria David Pons. Inclou visió general, connexions amb altres mòduls, code along, quatre unitats amb títols de RA i pesos globals extrets del full de càlcul, hores, exàmens en paper, pràctiques de preparació, aprovació de tots els RA abans d'arrodonir i recuperació final. S'ha mantingut el mínim de 5 explícit al full i s'ha assenyalat al professor la diferència amb l'expressió «superior a 5» de l'encàrrec. S'ha afegit el generador i la transcripció amb fonts per facilitar-ne l'edició.

@@ -14,7 +14,9 @@ Materials aportats pel professor el 2026-09-21 a `materials-anteriors/0613-desen
 | [[../../materials-anteriors/0613-desenvolupament-web-entorn-servidor/UT1/mvc basic.jpg|mvc basic.jpg]] | Esquema general del recorregut entre usuari, controlador, model, base de dades i vista. |
 | [[../../materials-anteriors/0613-desenvolupament-web-entorn-servidor/UT1/mvc spring.jpg|mvc spring.jpg]] | Esquema de Spring MVC: DispatcherServlet, HandlerMapping, HandlerAdapter, controlador, serveis, repositoris, Model, ViewResolver i vista. |
 
-S'han localitzat cinc fitxers: PDF, ZIP i tres suports. El professor esmenta quatre materials de suport; el quart no s'ha localitzat en aquesta ingesta.
+A la primera ingesta s'havien localitzat aquests cinc fitxers: PDF, ZIP i tres suports. El professor havia esmentat quatre materials de suport; el quart no es va localitzar aleshores.
+
+Posteriorment s'han afegit l'[[practica-ut1-reports-2526|activitat Spring Core — Reports i la seva proposta de solució]], documentades en una fitxa pròpia com a pràctica complementària al code along.
 
 ## Correspondència teoria–code along
 

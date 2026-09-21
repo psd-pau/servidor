@@ -1,0 +1,57 @@
+Objectiu
+Implementar una aplicació Spring Boot que gestioni informes i que, a mesura que es construeix, permeti practicar IoC, DI, beans, scopes, lazy i cicle de vida.
+
+
+Requisits i parts
+1. Interfície i implementacions
+Defineix la interfície ReportGenerator.
+
+Implementa dues versions:
+
+PdfReportGenerator
+
+HtmlReportGenerator
+
+Marca una com @Primary i l’altra selecciona-la amb @Qualifier.
+
+2. Servei principal
+Implementa un ReportService amb:
+
+Dependència obligatòria (constructor) al ReportGenerator.
+
+Dependència opcional (setter) a WatermarkService (afegeix una marca d’aigua).
+
+El mètode generateReport() ha de combinar el contingut i, si hi ha WatermarkService, afegir el text extra.
+
+3. Gestió d’usuaris de report (scope)
+Crea un bean ReportJob amb scope prototype, que representi una petició individual d’informe amb un ID únic.
+
+Cada vegada que es genera un report nou, s’hauria d’instanciar un ReportJob.
+
+Crea també un bean ReportStatistics amb scope singleton que mantingui el recompte total d’informes generats.
+
+4. Cache i inicialització (cicle de vida)
+Implementa un ReportCache (bean singleton) que:
+
+Tengui com a estructura de dades per desar els informes generats un mapa intern.
+Simuli carregar en @PostConstruct un conjunt d'informes predefinits. No es tracta d'un missatge, sinó d'afegir dades de prova al mapa.
+
+Guardi els informes generats nous al mapa.
+
+Alliberi recursos en @PreDestroy (per exemple, “Netejant cache de reports”). Encarrega't de que aquesta passa buidi el mapa.
+
+5. Bean pesat i lazy
+Simula un ExportEngine que trigui a inicialitzar-se (ex. Thread.sleep(10000)).
+
+L’engine només es crea quan un usuari demana una exportació.
+
+6. Controller REST
+Implementa un ReportController amb endpoints:
+
+GET /report/pdf → genera informe PDF.
+
+GET /report/html → genera informe HTML.
+
+GET /report/stats → mostra estadístiques (nombre total d’informes generats).
+
+GET /report/export → força l’ús de l’ExportEngine i comprova el retard de la primera crida.

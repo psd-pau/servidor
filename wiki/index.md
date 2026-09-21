@@ -20,6 +20,7 @@ Base de coneixement de treball per preparar el mòdul `0613. Desenvolupament web
 - [[../skills/presentacions-pau-casesnoves/SKILL|Guia de presentacions del centre]]: colors corporatius, format comú, autoria David Pons i suport al code along.
 
 - [[fonts/materials-ut1-2526|Materials d'U1 del curs anterior]]: apunts de Spring Core, suports d'arquitectura i correspondència amb el projecte de code along.
+- [[fonts/practica-ut1-reports-2526|Pràctica d'U1: gestor d'informes]]: enunciat, proposta de solució i connexió amb els conceptes del code along.
 
 ## Manteniment
 
