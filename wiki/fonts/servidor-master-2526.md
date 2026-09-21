@@ -2,7 +2,7 @@
 
 ## Tipus de font
 
-Documentació docent de partida del mòdul, rebuda en un arxiu ZIP. No és, per si mateixa, una disposició normativa.
+Documentació docent personal de partida del mòdul, rebuda en un arxiu ZIP. És la font principal de la filosofia pedagògica i l'arquitectura del curs; no és, per si mateixa, una disposició normativa.
 
 ## Ubicació immutable
 
@@ -14,7 +14,7 @@ Documentació docent de partida del mòdul, rebuda en un arxiu ZIP. No és, per 
 
 ## Síntesi operativa
 
-La font planteja el curs amb Java i l'ecosistema Spring, i prioritza una arquitectura per capes: domini, repositori, servei, controlador i vista/API. Defensa que la lògica de negoci se situï als serveis, que l'accés a dades sigui precís i que les dades exposades es transfereixin amb DTOs i mappers quan correspongui.
+La font planteja el curs amb Java i l'ecosistema Spring, i prioritza una arquitectura per capes: domini, repositori, servei, controlador i vista/API. Defensa que la lògica de negoci se situï als serveis, que l'accés a dades sigui precís i que les dades exposades es transfereixin amb DTOs i mappers quan correspongui. També introdueix serveis orientats a casos d'ús, logging amb SLF4J, proves de serveis i seguretat transversal. Aquest enfocament es desenvolupa a [[../orientacio-docent|Orientació docent]].
 
 També fixa quatre grans unitats inicials: introducció al servidor (`RA1`), accés a dades (`RA6`), serveis web (`RA7`, `RA9`) i desenvolupament d'aplicacions web (`RA2`–`RA5`, `RA8`). Vegeu [[../matrius/mapa-ra-unitats|Mapa RA–unitats]].
 

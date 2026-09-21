@@ -1,5 +1,7 @@
 # U4. Desenvolupament d'aplicacions web
 
+**Durada programada:** 120 hores, desembre–març. **Pes:** 10% cadascun per a RA2, RA3, RA4, RA5 i RA8 (50% del mòdul). Font: [[../../../fonts/programacio-didactica-2026-2027|programació 2026–2027]], fulls `UT4`, `6-Distribució temporal` i `2-ANCORATGE CURRICULAR`.
+
 ## RA i criteris d'avaluació
 
 - RA2 — pàgines dinàmiques amb codi embegut (`RA2.a`–`RA2.h`).
@@ -18,5 +20,6 @@ Generació dinàmica, estructures de control, manteniment d'estat, seguretat, MV
 
 ## Materials, avaluació i millores
 
+- Registre d'aula: les activitats i els instruments s'hi anotaran quan es facin. L'aplicació integrada és un exemple orientatiu de la wiki.
 - Cal construir una matriu CA–activitat–evidència per evitar que un únic lliurament amagui la cobertura de `RA2` a `RA5` i `RA8`.
 - [[../../../fonts/servidor-master-2526|Font de partida]] · [[../desenvolupament|Desenvolupament]].

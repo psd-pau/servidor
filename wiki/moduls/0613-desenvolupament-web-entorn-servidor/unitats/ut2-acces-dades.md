@@ -1,5 +1,7 @@
 # U2. Accés a dades
 
+**Durada programada:** 40 hores, setembre–octubre. **Pes de RA6:** 20% del mòdul. Font: [[../../../fonts/programacio-didactica-2026-2027|programació 2026–2027]], fulls `UT2`, `6-Distribució temporal` i `2-ANCORATGE CURRICULAR`.
+
 ## RA i criteris d'avaluació
 
 - RA6 — desenvolupament d'aplicacions web amb accés a bases de dades.
@@ -15,6 +17,7 @@ Persistència, connexions, recuperació i edició d'informació. La proposta doc
 
 ## Materials, avaluació i millores
 
-- Materials vigents: `materials/0173-programacio-entorn-servidor/`.
+- Materials vigents: `materials/0613-desenvolupament-web-entorn-servidor/`.
+- Registre d'aula: les activitats i els instruments s'hi anotaran quan es facin. L'aplicació de consulta i modificació és un exemple orientatiu de la wiki.
 - Cal especificar model de dades, restriccions de seguretat i instrument de qualificació abans d'impartir-la.
 - [[../../../fonts/servidor-master-2526|Font de partida]] · [[../desenvolupament|Desenvolupament]].

@@ -14,6 +14,12 @@
 
 ## Seqüència d'activitats
 
+Metodologia comuna: projecte Spring preparat pel professor i programació progressiva de les classes amb l'alumnat, amb pauses per explicar els conceptes.
+
+- Projecte de referència del professor:
+- Ordre de construcció de les classes, quan es concreti:
+- Conceptes i punts d'aturada per explicar-los:
+
 ## Materials
 
 ## Avaluació

@@ -1,0 +1,130 @@
+Estructura projecte simplificada:
+
+src/main/java/com/exemple/biblioteca/
+ ├── BibliotecaApplication.java
+ ├── controller/
+ │    └── LlibreController.java
+ ├── service/
+ │    └── LlibreService.java
+ ├── repository/
+ │    └── LlibreRepository.java
+ └── domain/
+      └── Llibre.java
+
+Resum
+
+domain→ entitats i objectes de domini
+
+repository → accés a BD (CRUD bàsic).
+
+service → totes les regles i validacions que tenen a veure amb el negoci (aquí és on realment “viu” l’aplicació).
+
+controller → només és la porta d’entrada (rep peticions i crida el service).
+
+Pensa-ho així:
+
+Domain = què és un llibre (dades, definició de dades... create table).
+
+Service = què puc fer amb un llibre i quines regles he de complir (negoci, semblant al que fariem a bbdd amb checks o triggers).
+
+Repository = com es guarda/recupera un llibre (dades, CRUD, select, insert, delete, update).
+
+Controller = com hi accedeix el món exterior (API).
+
+Estructura modular recomanada, sols APIs
+
+
+
+src/main/java/com/exemple/projecte/
+ ├── ProjecteApplication.java
+ ├── config/              # Configuracions generals (CORS, seguretat, beans comuns)
+ ├── exception/           # Excepcions globals i handlers
+ ├── util/                # Utilitats genèriques (dates, validacions, helpers)
+ ├── modules/
+ │    ├── usuari/
+ │    │    ├── controller/
+ │    │    │    ├── mvc/      # Controladors que retornen vistes
+ │    │    │    └── rest/     # Controladors que retornen JSON/XML (API)
+ │    │    ├── dto/           # DTOs específics del mòdul usuari
+ │    │    ├── domain/         # Entitats JPA i objectes del domini
+ │    │    ├── repository/    # Interfícies de persistència
+ │    │    └── service/       # Lògica de negoci
+ │    │
+ │    ├── producte/
+ │    │    ├── controller/
+ │    │    │    ├── mvc/
+ │    │    │    └── rest/
+ │    │    ├── dto/
+ │    │    ├── domain/
+ │    │    ├── repository/
+ │    │    └── service/
+ │    │
+ │    └── comanda/
+ │         ├── controller/
+ │         │    ├── mvc/
+ │         │    └── rest/
+ │         ├── dto/
+ │         ├── domain/
+ │         ├── repository/
+ │         └── service/
+
+
+
+
+
+Resum de cada directori
+
+config/ → Configuració global del projecte (CORS (Cross origin resource sharing), seguretat, beans comuns, formats).
+
+exception/ → Definició d’excepcions i gestió centralitzada d’errors.
+
+util/ → Classes d’utilitat genèriques reutilitzables.
+
+modules/ → Cada àrea funcional del projecte (usuari, producte, comanda, etc.).
+
+Dins de cada mòdul:
+
+controller/mvc/ → Controladors que retornen vistes (Thymeleaf, JSP).
+
+controller/rest/ → Controladors que exposen API REST (JSON/XML).
+
+dto/ → Classes per transferir dades entre capes o cap a l’exterior.
+
+domain/ → Entitats del domini i mapatges JPA.
+
+repository/ → Interfícies per a l’accés a dades (ex: JpaRepository).
+
+service/ → Lògica de negoci i regles del domini.
+
+Estructura projecte amb APIs i aplicació web.
+
+src/main/java/com/exemple/projecte/
+ ├── ProjecteApplication.java
+ ├── config/
+ ├── exception/
+ ├── util/
+ ├── modules/
+ │    ├── usuari/
+ │    │    ├── controller/
+ │    │    │    ├── mvc/      # Controladors MVC per la web
+ │    │    │    └── rest/     # Controladors per API REST
+ │    │    ├── dto/
+ │    │    ├── domain/
+ │    │    ├── repository/
+ │    │    └── service/
+ │    ├── producte/
+ │    └── comanda/
+ └── resources/
+      ├── static/             # Recursos estàtics accessibles al navegador
+      │    ├── css/           # Fulls d’estil
+      │    ├── js/            # Fitxers JavaScript
+      │    └── img/           # Imatges
+      ├── templates/          # Plantilles HTML Thymeleaf
+      │    ├── usuari/
+      │    │    └── llista.html
+      │    ├── producte/
+      │    │    └── detall.html
+      │    └── comanda/
+      │         └── checkout.html
+      └── application.properties   # Configuració del projecte
+
