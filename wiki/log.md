@@ -1,5 +1,13 @@
 # Log
 
+## [2026-10-02] decisió docent | Ordre de l'exemple `@Configuration` i `@Bean`
+
+El professor ha indicat que impartirà `GET /hora` després d'haver treballat el cicle de vida dels beans, inclosos `@PostConstruct` i `@PreDestroy`. S'ha fixat aquest ordre a la [[moduls/0613-desenvolupament-web-entorn-servidor/unitats/ut1-introduccio-servidor|fitxa d'U1]] com a seqüència prevista, sense registrar-la com a activitat ja feta.
+
+## [2026-10-02] materials | U1: bean de biblioteca configurat explícitament
+
+S'han copiat les classes Java del projecte històric d'U1 a `materials/` com a punt de partida del code along del curs 2026–2027 i s'hi ha afegit `GET /hora`. L'exemple registra un `DateTimeFormatter` de Java amb `@Configuration` i `@Bean`, el fa servir des d'un component del domini i manté el recorregut controlador–servei–domini. La [[moduls/0613-desenvolupament-web-entorn-servidor/unitats/ut1-introduccio-servidor|fitxa d'U1]] documenta el projecte de referència, la progressió proposada i els punts d'explicació. El material original i l'activitat d'informes no s'han modificat.
+
 ## [2026-09-21] ingest | Pràctica d'U1 — Reports i proposta de solució
 
 S'han ingerit `Activitat Spring Core 2526 - Reports.txt` i `2526 solucio_practica_1.zip`, conservats a la carpeta de materials anteriors d'U1. La [[fonts/practica-ut1-reports-2526|fitxa de pràctica]] recull requisits, estructura de la solució i relació amb el code along. S'han documentat diferències de la còpia rebuda: marca d'aigua obligatòria, absència d'inicialització lazy a l'exportador i ús d'un mapa de generadors al servei comú. S'han actualitzat l'índex i U1. Revisió del codi font sense execució ni modificació dels originals.

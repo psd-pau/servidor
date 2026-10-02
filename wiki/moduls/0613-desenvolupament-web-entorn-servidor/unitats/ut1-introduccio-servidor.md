@@ -21,6 +21,16 @@ La [[../../../fonts/materials-ut1-2526|fitxa dels materials d'U1]] enllaça el P
 
 El fil dels exemples va de `Cotxe` i `Motor` per explicar dependències a comptadors i tickets per als scopes, UUIDs de petició i sessió, un bean d'inicialització costosa i un generador d'informes amb hooks de cicle de vida. És el repertori present als materials, sense fixar sessions ni donar per impartida aquesta seqüència el curs actual.
 
+### Extensió preparada per al curs 2026–2027: `@Configuration` i `@Bean`
+
+A `materials/0613-desenvolupament-web-entorn-servidor/UT1/unitat1/src/main/java/cat/paucasesnovescifp/unitat1/` hi ha una còpia de les classes Java del code along anterior amb quatre classes noves. Es distribueix només el contingut del paquet Java; per executar-lo cal situar-lo dins un projecte Spring Boot amb Web, com el de referència.
+
+El cas nou és `GET /hora`: `HoraController → HoraService → RellotgeServidor`. `HoraConfig`, anotada amb `@Configuration`, registra amb `@Bean` un `java.time.format.DateTimeFormatter` amb el patró `dd/MM/yyyy HH:mm:ss`. `RellotgeServidor` rep aquest objecte per constructor i formata l'hora local del servidor. La classe de la biblioteca Java no es pot anotar amb `@Component`; la fàbrica explícita permet posar-la sota la gestió de Spring. No s'hi afegeix cap solució de la pràctica d'informes.
+
+**Seqüència decidida pel professor:** impartir aquest exemple **després del bloc de cicle de vida dels beans**, quan ja s'hagin treballat `@PostConstruct`, `@PreDestroy` i l'exemple existent de `ReportGenerator`. Això situa `@Configuration` i `@Bean` al final d'aquesta progressió de Spring Core, abans de plantejar l'activitat pràctica d'informes; l'exemple de l'hora no n'avança la solució.
+
+**Progressió preparada del code along per a `/hora`:** començar per la classe `RellotgeServidor` i veure que necessita un formatador; mostrar `HoraConfig` i aturar-se a distingir el mètode `@Bean` de l'anotació `@Component`; afegir `HoraService` i `HoraController` per observar la injecció i la resposta de `/hora`. És material previst, no una activitat ja impartida. Es relaciona amb el funcionament del framework dins `RA1.c` i `RA1.g`; la resposta HTTP n'és l'evidència observable, no un nou criteri d'avaluació.
+
 ## Seguiment i avaluació
 
 Hi ha una [[../../../fonts/practica-ut1-reports-2526|pràctica de Spring Core sobre gestió d'informes]], amb enunciat i proposta de solució del curs anterior. Reuneix interfícies i generadors, DI, scopes, cache, cicle de vida i inicialització diferida en un mateix cas. La fitxa documenta també les diferències entre els requisits i el codi rebut.
