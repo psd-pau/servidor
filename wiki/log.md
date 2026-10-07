@@ -1,5 +1,9 @@
 # Log
 
+## [2026-10-07] context | Projecte d'U1 2026–2027: ObjectProvider i beans de configuració
+
+S'ha revisat el projecte aportat pel professor a `materials/0613-desenvolupament-web-entorn-servidor/UT1/UT1_2627/`. S'han actualitzat la fitxa d'U1, el desenvolupament operatiu i l'índex amb la comparació entre `/cart/direct` i `/cart/factory`, les classes `ShoppingCart`, `ShoppingCartFactory` i `CheckoutService`, i la incorporació de l'exemple `/hora` al projecte complet. S'ha documentat la diferència entre conservar un prototype injectat en un singleton i demanar instàncies noves amb `ObjectProvider.getObject()`. Es manté la seqüència docent ja registrada de `@Configuration` i `@Bean` després del cicle de vida; la progressió de l'exemple de carrets queda com a proposta. Revisió del codi font sense executar ni modificar el projecte; materials preparats, sense donar-los per impartits. No s'ha fet commit en aquesta actualització de context.
+
 ## [2026-09-21] ingest | Pràctica d'U1 — Reports i proposta de solució
 
 S'han ingerit `Activitat Spring Core 2526 - Reports.txt` i `2526 solucio_practica_1.zip`, conservats a la carpeta de materials anteriors d'U1. La [[fonts/practica-ut1-reports-2526|fitxa de pràctica]] recull requisits, estructura de la solució i relació amb el code along. S'han documentat diferències de la còpia rebuda: marca d'aigua obligatòria, absència d'inicialització lazy a l'exportador i ús d'un mapa de generadors al servei comú. S'han actualitzat l'índex i U1. Revisió del codi font sense execució ni modificació dels originals.

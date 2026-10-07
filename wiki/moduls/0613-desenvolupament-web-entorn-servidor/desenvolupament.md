@@ -14,3 +14,5 @@ La metodologia comuna és el **code along**: el professor duu un projecte Spring
 Vegeu també el [[../../matrius/mapa-ra-unitats|mapa de traçabilitat]].
 
 U1 disposa de [[../../fonts/materials-ut1-2526|materials del curs anterior ingerits]]: apunts, suports d'arquitectura i projecte Java per al code along.
+
+Per al curs 2026–2027, el projecte complet `materials/0613-desenvolupament-web-entorn-servidor/UT1/UT1_2627/` prepara dos exemples nous: comparació de la injecció directa d'un bean `prototype` amb l'obtenció de noves instàncies mitjançant `ObjectProvider`, i registre d'un `DateTimeFormatter` amb `@Configuration` i `@Bean`. La [[unitats/ut1-introduccio-servidor|fitxa d'U1]] documenta les classes, les rutes observables i els punts d'explicació; la incorporació del projecte no implica que ja s'hagin impartit.

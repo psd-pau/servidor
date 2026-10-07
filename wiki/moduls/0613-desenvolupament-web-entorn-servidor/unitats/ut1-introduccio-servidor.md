@@ -21,7 +21,23 @@ La [[../../../fonts/materials-ut1-2526|fitxa dels materials d'U1]] enllaça el P
 
 El fil dels exemples va de `Cotxe` i `Motor` per explicar dependències a comptadors i tickets per als scopes, UUIDs de petició i sessió, un bean d'inicialització costosa i un generador d'informes amb hooks de cicle de vida. És el repertori present als materials, sense fixar sessions ni donar per impartida aquesta seqüència el curs actual.
 
-### Extensió preparada per al curs 2026–2027: `@Configuration` i `@Bean`
+### Projecte actual `UT1_2627`: `ObjectProvider`, `@Configuration` i `@Bean`
+
+**Actualització del professor, 2026-10-07:** el projecte Spring complet `materials/0613-desenvolupament-web-entorn-servidor/UT1/UT1_2627/` incorpora dos exemples per explicar conceptes nous al code along: obtenció de beans `prototype` amb `ObjectProvider` i definició de beans amb `@Configuration` i `@Bean`. Conté `pom.xml`, Maven Wrapper, recursos i una prova de càrrega del context. El POM declara Java 25, Spring Boot 4.1.1 i Spring Web MVC. És material preparat; no consta encara com a activitat impartida.
+
+**Beans `prototype`:** `domain/ShoppingCart.java` és un `@Component` amb `@Scope("prototype")` i un UUID propi. `controller/CartController.java`, singleton per defecte, rep un carret directament pel constructor i també una `ShoppingCartFactory`. `domain/ShoppingCartFactory.java` rep `ObjectProvider<ShoppingCart>` i cada crida a `createCart()` executa `provider.getObject()`.
+
+| Ruta i classes de referència | Evidència observable prevista |
+|---|---|
+| `GET /cart/direct` → `CartController.direct()` → `directCart.getId()` | Les peticions successives mostren el mateix UUID mentre es manté el context: el carret es resol una vegada en construir el controlador. |
+| `GET /cart/factory` → `CartController.factory()` → `ShoppingCartFactory.createCart()` | Les peticions successives mostren UUIDs diferents: cada crida al proveïdor demana un bean nou de tipus `prototype`. |
+| `CheckoutService.startCheckout()` → `ShoppingCartFactory.createCart()` | Exemple d'ús de la mateixa fàbrica des d'un servei; escriu l'UUID a consola, però cap controlador del projecte invoca aquest mètode. |
+
+**Progressió proposada a partir del codi:** presentar `ShoppingCart` i la injecció directa, repetir `/cart/direct` i aturar-se a explicar que l'scope `prototype` no renova automàticament una dependència ja injectada en un singleton; introduir la fàbrica i `ObjectProvider`, repetir `/cart/factory` i comparar els UUIDs. És una proposta de suport al code along, pendent de concretar-ne l'ordre a l'aula. La comparació aporta evidències del funcionament del framework en relació amb `RA1.c` i `RA1.g`, sense afegir criteris ni ponderacions.
+
+**Beans de configuració:** el projecte complet incorpora `config/HoraConfig.java`, `domain/RellotgeServidor.java`, `service/HoraService.java` i `controller/HoraController.java`, amb el comportament de `/hora` descrit a continuació. La ruta base `/` ofereix també la resposta inicial de `PrimerControlador`.
+
+### Antecedent i seqüència preparada de l'exemple `/hora`
 
 A `materials/0613-desenvolupament-web-entorn-servidor/UT1/unitat1/src/main/java/cat/paucasesnovescifp/unitat1/` hi ha una còpia de les classes Java del code along anterior amb quatre classes noves. Es distribueix només el contingut del paquet Java; per executar-lo cal situar-lo dins un projecte Spring Boot amb Web, com el de referència.
 
