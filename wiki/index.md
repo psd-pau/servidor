@@ -18,6 +18,8 @@ Base de coneixement de treball per preparar el mòdul `0613. Desenvolupament web
 - [[presentacio-modul|Presentació del mòdul 2026–2027]]: PPTX i PDF de benvinguda, connexions amb DAW, unitats, RA, hores i criteris d'avaluació.
 
 - [[../skills/presentacions-pau-casesnoves/SKILL|Guia de presentacions del centre]]: colors corporatius, format comú, autoria David Pons i suport al code along.
+- [[../skills/documents-alumnat-pau-casesnoves/SKILL|Guia de documents per a l'alumnat]]: dossiers, apunts i guies en DOCX i PDF per a IFC33C, amb identitat del centre i suport al code along de Java i Spring.
+- [[../skills/examens-pau-casesnoves/SKILL|Guia d'exàmens en paper]]: plantilla del centre, problemes de resposta oberta i puntuació per parts que avaluen la tria i l'aplicació de les eines treballades.
 
 - [[fonts/materials-ut1-2526|Materials d'U1 del curs anterior]]: apunts de Spring Core, suports d'arquitectura i correspondència amb el projecte de code along.
 - [[fonts/practica-ut1-reports-2526|Pràctica d'U1: gestor d'informes]]: enunciat, proposta de solució i connexió amb els conceptes del code along.

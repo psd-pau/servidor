@@ -16,6 +16,7 @@ Font: [MDE20702 Plantilla Presentació CIFP Pau Casesnoves.pptx](../../materials
 - Professor: **David Pons**. Escriu el nom així a la portada i als camps d'autoria que es generin.
 - Centre: **CIFP Pau Casesnoves**.
 - Llengua: català; conserva els identificadors del codi i els noms propis de les tecnologies.
+- Configura també el català (`ca-ES`) com a llengua de correcció del text i a les metadades de llengua que admeti el format de sortida; en HTML, usa `lang="ca"`. Conserva aquesta llengua en exportar el PDF.
 - Logotip: [assets/logo-pau-casesnoves.png](assets/logo-pau-casesnoves.png), còpia exacta de `ppt/media/image1.png` de la plantilla. Mantén-ne les proporcions i els colors; col·loca'l sobre blanc, amb espai lliure al voltant. Usa'l a la portada; a la resta, només si encaixa sense carregar la diapositiva.
 - No inventis cursos acadèmics ni números d'unitat: pren-los de l'encàrrec o de la wiki.
 

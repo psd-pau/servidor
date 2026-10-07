@@ -5,6 +5,7 @@ Aquest repositori és una base de coneixement per preparar el mòdul `0613. Dese
 ## Llengua i criteri docent
 
 - Respon i redacta la wiki en català.
+- El català és la llengua d'impartició i dels materials generats. Configura també la llengua de correcció i les metadades dels documents com a `ca-ES` quan el format ho admeti, i conserva-la en les exportacions.
 - El centre de gravetat de la planificació són els resultats d'aprenentatge (RA), els criteris d'avaluació (CA) i les evidències observables.
 - Les tecnologies (actualment Java i Spring) són mitjans per assolir els RA; es poden actualitzar si se'n manté la traçabilitat curricular.
 - Diferencia entre contingut curricular, decisió docent i proposta de millora.
@@ -25,6 +26,10 @@ Aquest repositori és una base de coneixement per preparar el mòdul `0613. Dese
 ## Convencions
 
 - Per crear o editar presentacions d'aquest projecte, llegeix i aplica `skills/presentacions-pau-casesnoves/SKILL.md`. Defineix la paleta del centre, la tipografia, les disposicions i el tractament del codi; el nom del professor és **David Pons**. La plantilla del centre és una referència visual adaptable.
+- Per crear o editar dossiers, apunts, guies de pràctica o enunciats en format editable i PDF, llegeix i aplica `skills/documents-alumnat-pau-casesnoves/SKILL.md`. Per defecte genera DOCX i el PDF exportat d'aquest mateix document, amb identitat del CIFP Pau Casesnoves i autoria David Pons. No cal aplicar-la per editar només un Markdown.
+- Per crear o editar exàmens, llegeix i aplica `skills/examens-pau-casesnoves/SKILL.md`. Empra la plantilla d'examen del centre, que preval sobre el format genèric de dossiers. El grup és **IFC33C** i el nom fix del mòdul és **Desenvolupament web en entorn servidor** (0613), denominació curricular del BOE en català; el curs acadèmic es calcula dinàmicament.
+- Els exàmens són problemes de **resposta oberta en paper**, amb parts puntuades separadament. Han d'avaluar que l'alumnat identifica i aplica les eines, anotacions, llibreries i conceptes treballats a la UT. Descriu requisits i comportaments que permetin deduir la solució, sense indicar explícitament l'eina que s'avalua. Els exemples de scopes, lazy, REST o JPA no són una llista obligatòria per a cada prova.
+- La programació del mòdul es fa amb **Java i Spring**. Aquest entorn no disposa de Python; les eines de generació de materials han de funcionar sense aquesta dependència.
 
 - Empra els codis `RA1` a `RA9` i `RAx.a` a `RAx.h` de manera consistent.
 - Cada unitat ha d'indicar els RA i CA pertinents i pot registrar productes, materials, activitats, avaluació i millores a mesura que es concretin o es duguin a terme. Distingeix sempre una activitat realitzada d'una proposta.

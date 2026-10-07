@@ -1,5 +1,17 @@
 # Log
 
+## [2026-10-07] correction | Llengua catalana als documents generats
+
+Per indicació de David Pons, el català és la llengua d'impartició i de sortida dels materials. S'ha adaptat la plantilla local d'examen: `ca-ES` a les metadades i al fragment de text que encara tenia `es-ES`; els estils ja eren en català. El helper fixa també les metadades de llengua del DOCX generat. S'ha incorporat a `AGENTS.md` i a les tres skills de materials el criteri de configurar el català a la correcció del text i a les metadades disponibles, i conservar-lo en exportar a PDF. La plantilla d'origen del repositori d'IA no es modifica.
+
+## [2026-10-07] convention | Skills de materials i exàmens adaptades a servidor
+
+S'han importat `skills/documents-alumnat-pau-casesnoves/` i `skills/examens-pau-casesnoves/` des de `C:\Users\David\Documents\Docencia\IA\especialitzacio\skills\`, incloent-hi el logotip, la plantilla DOCX del centre i el helper PowerShell de capçalera. Les còpies s'han adaptat a **IFC33C**, autoria **David Pons** i nom fix **Desenvolupament web en entorn servidor** (0613), denominació curricular del BOE en català. El helper ja no requereix indicar el mòdul i conserva el càlcul dinàmic del curs acadèmic. S'han eliminat les dependències de Python de les instruccions de producció, segons l'aclariment del professor: aquí es programa amb Java i Spring i no hi ha Python.
+
+Per indicació directa del professor, la guia d'exàmens substitueix l'enfocament de test d'IA per **problemes de resposta oberta en paper**, amb parts puntuades separadament i traçabilitat RA–CA–evidència. Els requisits han de fer que l'alumnat dedueixi i apliqui les eines treballades, sense prescriure la solució. Scopes, inicialització diferida, REST, entitats JPA i consultes són exemples d'aplicació, no apartats obligatoris. S'han actualitzat `AGENTS.md`, l'[[index|índex]] i l'[[orientacio-docent|orientació docent]]. Es documenta una convenció de preparació; no s'ha creat ni registrat cap examen com a realitzat. El repositori d'IA i `raw/` es conserven intactes.
+
+Validació amb PowerShell/.NET: metadades i enllaços locals de les dues skills, igualtat del logotip i la plantilla amb els originals i tres DOCX temporals del helper (data de febrer, canvi de curs al setembre i data en blanc). S'han comprovat grup, nom fix del mòdul, curs, UT i autoria, conservació íntegra d'estils, imatges i peus, i rebuig de sobreescriptura. El script es desa en UTF-8 amb BOM per conservar els accents en Windows PowerShell. Els documents temporals de comprovació s'han eliminat; no s'ha fet exportació ni revisió visual de PDF en aquesta importació.
+
 ## [2026-09-21] ingest | Pràctica d'U1 — Reports i proposta de solució
 
 S'han ingerit `Activitat Spring Core 2526 - Reports.txt` i `2526 solucio_practica_1.zip`, conservats a la carpeta de materials anteriors d'U1. La [[fonts/practica-ut1-reports-2526|fitxa de pràctica]] recull requisits, estructura de la solució i relació amb el code along. S'han documentat diferències de la còpia rebuda: marca d'aigua obligatòria, absència d'inicialització lazy a l'exportador i ús d'un mapa de generadors al servei comú. S'han actualitzat l'índex i U1. Revisió del codi font sense execució ni modificació dels originals.

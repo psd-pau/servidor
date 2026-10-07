@@ -12,6 +12,14 @@ L'objectiu és que l'alumnat construeixi aplicacions web funcionals i, sobretot,
 
 El projecte resolt és la referència de preparació del professor. La construcció progressiva a l'aula és el fil que introdueix i relaciona els conceptes; els apunts i esquemes hi donen suport. Per preparar futurs materials, cal tenir presents tant les classes necessàries com l'ordre de construcció i els punts d'aturada per a les explicacions, quan el professor els concreti.
 
+## Avaluació: casos de resposta oberta en paper
+
+**Decisió docent directa de David Pons, 2026-10-07:** el grup és **IFC33C** i els exàmens plantegen un problema que s'ha de resoldre amb resposta oberta en paper. S'hi avalua que l'alumnat sap identificar quines eines, anotacions, llibreries i conceptes treballats a la UT necessita a cada part i aplicar-los correctament. Aquesta concreció amplia la decisió d'exàmens en paper recollida a la [[presentacio-modul|presentació inicial]].
+
+El cas es desglossa en parts puntuades separadament. L'enunciat descriu els requisits i el comportament esperat sense prescriure la solució tècnica: per exemple, pot requerir conservar informació d'un usuari entre peticions sense ordenar crear un bean de sessió. Els components de petició, la inicialització diferida, les operacions REST, les entitats JPA i les consultes de repositori són exemples possibles segons la unitat treballada, no un temari obligatori de cada prova. El barem concret s'estableix en preparar cada examen i es relaciona amb els RA, CA i evidències pertinents.
+
+La [[../skills/examens-pau-casesnoves/SKILL|skill d'exàmens]] concreta aquest criteri i el format del centre. És una decisió docent, no una prescripció curricular del BOE ni el registre d'una prova ja realitzada. El nom del mòdul es manté fix: **Desenvolupament web en entorn servidor** (0613), denominació curricular del BOE en català. Els materials i les proves treballen amb **Java i Spring**; les eines de generació no depenen de Python, absent en aquest entorn.
+
 ## Fil conductor: responsabilitats clares
 
 La font descriu una arquitectura per capes, anomenada «Clean Architecture light aplicada a Spring»:
