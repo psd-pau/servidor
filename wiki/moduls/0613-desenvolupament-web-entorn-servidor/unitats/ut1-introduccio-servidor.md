@@ -19,9 +19,17 @@ El marc curricular inclou model client-servidor, eines, generació dinàmica i i
 
 La [[../../../fonts/materials-ut1-2526|fitxa dels materials d'U1]] enllaça el PDF de 28 pàgines, el projecte `unitat1.zip`, els dos esquemes MVC i el document d'estructura de projectes. També relaciona cada bloc teòric amb les classes i rutes HTTP del projecte.
 
+**Esborrany d'apunts, 2026-10-08:** [[../../../../materials/0613-desenvolupament-web-entorn-servidor/UT1/introduccio-a-spring.md|Introducció a Spring en Markdown]] desenvolupa els blocs del PDF original i els actualitza amb precisions sobre DI, scopes, proxies, lazy i cicle de vida, més `ObjectProvider` amb factory i l'exemple `/hora`. És un primer intent de material d'alumnat per revisar abans de generar-ne DOCX i PDF. La fitxa de materials registra la correspondència amb les pàgines originals i els canvis editorials.
+
 El fil dels exemples va de `Cotxe` i `Motor` per explicar dependències a comptadors i tickets per als scopes, UUIDs de petició i sessió, un bean d'inicialització costosa i un generador d'informes amb hooks de cicle de vida. És el repertori present als materials, sense fixar sessions ni donar per impartida aquesta seqüència el curs actual.
 
-### Projecte actual `UT1_2627`: `ObjectProvider`, `@Configuration` i `@Bean`
+### Projecte impartit `unitat1_2627`: referència actual dels apunts
+
+**Confirmació del professor, 2026-10-08:** `materials/0613-desenvolupament-web-entorn-servidor/UT1/unitat1_2627/` és el code along realitzat a classe enguany. La [[../../../fonts/code-along-ut1-2627|fitxa del projecte impartit]] documenta les classes i rutes. Els apunts en Markdown s'han adaptat a `CotxeService → Cotxe`, `CartController → ShopingCartService → ShopingCartFactory`, la ruta `/lazy`, `ReportService.generateReport()` i `HoraConfiguration`, amb `/hora` dins `Unitat1Contoller`. Es conserven els noms exactes dels fitxers i les sortides observables. `ProvaHashController` queda exclòs per indicació expressa del professor.
+
+La confirmació identifica contingut treballat a classe, sense fixar-ne la seqüència exacta o donar per demostrada l'adquisició dels CA per l'alumnat. `ReportJobFactory` continua com a disseny de la pràctica, mentre que el code along implementa la factory de carrets. Les còpies descrites a continuació es mantenen com a antecedents de preparació.
+
+### Projecte de preparació `UT1_2627`: `ObjectProvider`, `@Configuration` i `@Bean`
 
 **Actualització del professor, 2026-10-07:** el projecte Spring complet `materials/0613-desenvolupament-web-entorn-servidor/UT1/UT1_2627/` incorpora dos exemples per explicar conceptes nous al code along: obtenció de beans `prototype` amb `ObjectProvider` i definició de beans amb `@Configuration` i `@Bean`. Conté `pom.xml`, Maven Wrapper, recursos i una prova de càrrega del context. El POM declara Java 25, Spring Boot 4.1.1 i Spring Web MVC. És material preparat; no consta encara com a activitat impartida.
 

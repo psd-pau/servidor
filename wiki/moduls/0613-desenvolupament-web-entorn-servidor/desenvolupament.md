@@ -24,7 +24,9 @@ Per al curs 2026–2027, el projecte complet `materials/0613-desenvolupament-web
 | IoC, beans i DI | Dependències per constructor i setter; selecció amb `@Primary` i `@Qualifier`. |
 | Scopes i petició de noves instàncies | Comparar `/cart/direct` i `/cart/factory`: un prototype injectat directament en un singleton es conserva; `ObjectProvider.getObject()` demana una instància quan cal. La factory encapsula aquesta petició. |
 | Inicialització diferida i cicle de vida | Exemples existents de cost d'inicialització, `@PostConstruct`, `@PreDestroy` i `ReportGenerator`. |
-| Configuració explícita de beans | `/hora`: `HoraConfig` registra el `DateTimeFormatter` amb `@Bean`; `RellotgeServidor` el rep per constructor. |
+| Configuració explícita de beans | `/hora`: `HoraConfiguration` registra el `DateTimeFormatter` amb `@Bean`; `RellotgeServidor` el rep per constructor. |
 | Aplicació a la pràctica d'informes | `ReportJob` prototype i serveis singleton: la solució actual preveu `ReportJobFactory` amb `ObjectProvider<ReportJob>`, i cada generació fa `reportJobFactory.createJob()`. |
 
 Aquest outline organitza la preparació i els punts d'aturada del code along; no fixa sessions ni acredita continguts ja impartits. La fitxa d'U1 inclou l'explicació breu i el codi de referència de `ReportJobFactory`. Es mantenen `RA1`, la interpretació docent de `RA1.c` i `RA1.g`, les hores i les ponderacions vigents.
+
+**Actualització amb el projecte impartit, 2026-10-08:** David Pons ha aportat `materials/0613-desenvolupament-web-entorn-servidor/UT1/unitat1_2627/` i confirma que és el code along fet a classe. Aquesta còpia passa a ser la referència dels exemples d'alumnat; `UT1_2627/` conserva l'estat de proves prèvies. La [[../../fonts/code-along-ut1-2627|fitxa de font]] registra els recorreguts amb `CotxeService`, `ShopingCartService` i `ShopingCartFactory`, la ruta `/lazy` i la configuració `HoraConfiguration` amb `/hora` a `Unitat1Contoller`. L'outline segueix sent una organització conceptual, no un registre de sessions. `ProvaHashController` queda fora dels apunts per indicació del professor.

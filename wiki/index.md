@@ -22,7 +22,9 @@ Base de coneixement de treball per preparar el mòdul `0613. Desenvolupament web
 - [[../skills/examens-pau-casesnoves/SKILL|Guia d'exàmens en paper]]: plantilla del centre, problemes de resposta oberta i puntuació per parts que avaluen la tria i l'aplicació de les eines treballades.
 
 - [[fonts/materials-ut1-2526|Materials d'U1 del curs anterior]]: apunts de Spring Core, suports d'arquitectura i correspondència amb el projecte de code along.
-- [[moduls/0613-desenvolupament-web-entorn-servidor/unitats/ut1-introduccio-servidor|U1 del curs actual]]: proves prèvies a classe del projecte `UT1_2627`, comparació de beans `prototype` amb injecció directa i `ObjectProvider`, trasllat a `ReportJobFactory` per a la solució dels informes i exemple de `@Configuration` i `@Bean` amb `GET /hora`.
+- [[fonts/code-along-ut1-2627|Code along d'U1 impartit el curs 2026–2027]]: projecte `unitat1_2627` confirmat pel professor com a codi treballat a classe; classes, rutes i correspondència amb els apunts actualitzats.
+- [[../materials/0613-desenvolupament-web-entorn-servidor/UT1/introduccio-a-spring.md|Introducció a Spring — esborrany d'apunts 2026–2027]]: material autònom en Markdown per revisar, amb els blocs del PDF original, precisions conceptuals, `ObjectProvider`, beans de configuració i casos reals de cicle de vida.
+- [[moduls/0613-desenvolupament-web-entorn-servidor/unitats/ut1-introduccio-servidor|U1 del curs actual]]: code along impartit `unitat1_2627`, antecedent de proves `UT1_2627`, comparació de beans `prototype` amb injecció directa i `ObjectProvider`, trasllat a `ReportJobFactory` i exemple de `@Configuration` i `@Bean` amb `GET /hora`.
 - [[fonts/practica-ut1-reports-2526|Pràctica d'U1: gestor d'informes]]: enunciat, proposta de solució i connexió amb els conceptes del code along.
 
 ## Manteniment
