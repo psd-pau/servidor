@@ -16,3 +16,15 @@ Vegeu també el [[../../matrius/mapa-ra-unitats|mapa de traçabilitat]].
 U1 disposa de [[../../fonts/materials-ut1-2526|materials del curs anterior ingerits]]: apunts, suports d'arquitectura i projecte Java per al code along.
 
 Per al curs 2026–2027, el projecte complet `materials/0613-desenvolupament-web-entorn-servidor/UT1/UT1_2627/` prepara dos exemples nous: comparació de la injecció directa d'un bean `prototype` amb l'obtenció de noves instàncies mitjançant `ObjectProvider`, i registre d'un `DateTimeFormatter` amb `@Configuration` i `@Bean`. La [[unitats/ut1-introduccio-servidor|fitxa d'U1]] documenta les classes, les rutes observables i els punts d'explicació; la incorporació del projecte no implica que ja s'hagin impartit.
+
+**Concreció del professor, 2026-10-08:** `UT1_2627` recull les proves prèvies a classe. L'outline de Spring Core incorpora la petició de prototypes en el bloc de scopes i manté els beans de configuració després del cicle de vida:
+
+| Bloc de la progressió | Referència i punt d'explicació |
+|---|---|
+| IoC, beans i DI | Dependències per constructor i setter; selecció amb `@Primary` i `@Qualifier`. |
+| Scopes i petició de noves instàncies | Comparar `/cart/direct` i `/cart/factory`: un prototype injectat directament en un singleton es conserva; `ObjectProvider.getObject()` demana una instància quan cal. La factory encapsula aquesta petició. |
+| Inicialització diferida i cicle de vida | Exemples existents de cost d'inicialització, `@PostConstruct`, `@PreDestroy` i `ReportGenerator`. |
+| Configuració explícita de beans | `/hora`: `HoraConfig` registra el `DateTimeFormatter` amb `@Bean`; `RellotgeServidor` el rep per constructor. |
+| Aplicació a la pràctica d'informes | `ReportJob` prototype i serveis singleton: la solució actual preveu `ReportJobFactory` amb `ObjectProvider<ReportJob>`, i cada generació fa `reportJobFactory.createJob()`. |
+
+Aquest outline organitza la preparació i els punts d'aturada del code along; no fixa sessions ni acredita continguts ja impartits. La fitxa d'U1 inclou l'explicació breu i el codi de referència de `ReportJobFactory`. Es mantenen `RA1`, la interpretació docent de `RA1.c` i `RA1.g`, les hores i les ponderacions vigents.

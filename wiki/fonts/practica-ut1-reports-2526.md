@@ -50,6 +50,8 @@ La proposta permet estudiar l'evolució del disseny. Aquestes diferències quede
 
 ## Encaix docent
 
+**Actualització per al curs 2026–2027, 2026-10-08:** el professor fixa per a la solució actual una `ReportJobFactory` que encapsula `ObjectProvider<ReportJob>` i exposa `createJob()`. Els serveis de generació, singleton, injecten aquesta factory per constructor i demanen un treball prototype nou per informe. La [[../moduls/0613-desenvolupament-web-entorn-servidor/unitats/ut1-introduccio-servidor|fitxa d'U1]] recull l'explicació i el fragment de referència, a partir de les proves de `ShoppingCartFactory` del projecte `UT1_2627` i del context aportat pel professor. És el disseny decidit per a la solució actual; la descripció anterior d'`ObjectFactory` correspon al ZIP històric i es manté intacta.
+
 La pràctica pertany a [[../moduls/0613-desenvolupament-web-entorn-servidor/unitats/ut1-introduccio-servidor|U1]], vinculada a `RA1`. Com a interpretació docent, aporta sobretot pràctica del funcionament de l'entorn servidor i de Spring (`RA1.c`, `RA1.g`). Les rutes REST i la cache són suports per observar els conceptes; aquesta activitat no introdueix per si sola una qualificació de `RA6` o `RA7`.
 
 Pot servir com a material de repàs per explicar quina dependència s'injecta, quan es crea una instància, què comparteixen els serveis i quan s'executen les inicialitzacions. Això descriu el seu aprofitament formatiu, sense fixar el contingut d'un examen.
