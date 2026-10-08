@@ -1,0 +1,29 @@
+#POST http://localhost:8080/books
+#Content-Type: application/json
+#
+#{
+#  "title": "Prova",
+#  "author": "David",
+#  "isbn": "0780130449135",
+#  "publishedDate": "2025-01-01",
+#  "genre": "NOVEL"
+#}
+
+#GET http://localhost:8080/books
+
+
+
+#PUT http://localhost:8080/books/22
+#Content-Type: application/json
+#
+#{
+#  "title": "Prova actualitzada",
+#  "author": "David Pons",
+#  "isbn": "0780130449135",
+#  "publishedDate": "2025-05-15",
+#  "genre": "NOVEL"
+#}
+
+#GET http://localhost:8080/books/22
+
+#DELETE http://localhost:8080/books/22

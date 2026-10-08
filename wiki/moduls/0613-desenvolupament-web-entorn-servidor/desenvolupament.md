@@ -15,6 +15,8 @@ Vegeu també el [[../../matrius/mapa-ra-unitats|mapa de traçabilitat]].
 
 U1 disposa de [[../../fonts/materials-ut1-2526|materials del curs anterior ingerits]]: apunts, suports d'arquitectura i projecte Java per al code along.
 
+U2 disposa del [[../../fonts/code-along-ut2-2526|code along del curs 2025–2026]] extret a `materials-anteriors/` i d'un [[../../../materials/0613-desenvolupament-web-entorn-servidor/UT2/acces-a-dades-amb-spring.md|esborrany inicial de teoria]] a `materials/`. Els apunts segueixen dos fils: llibres (entitats, repositoris, consultes i CRUD) i universitat (relacions entre entitats). La progressió proposada és una pauta de preparació, no un registre de sessions impartides. El DOCX i el PDF teòrics d'U2 encara no s'han creat.
+
 Per al curs 2026–2027, el projecte complet `materials/0613-desenvolupament-web-entorn-servidor/UT1/UT1_2627/` prepara dos exemples nous: comparació de la injecció directa d'un bean `prototype` amb l'obtenció de noves instàncies mitjançant `ObjectProvider`, i registre d'un `DateTimeFormatter` amb `@Configuration` i `@Bean`. La [[unitats/ut1-introduccio-servidor|fitxa d'U1]] documenta les classes, les rutes observables i els punts d'explicació; la incorporació del projecte no implica que ja s'hagin impartit.
 
 **Concreció del professor, 2026-10-08:** `UT1_2627` recull les proves prèvies a classe. L'outline de Spring Core incorpora la petició de prototypes en el bloc de scopes i manté els beans de configuració després del cicle de vida:
