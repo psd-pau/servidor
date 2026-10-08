@@ -3,7 +3,8 @@ lang: ca-ES
 author: David Pons
 title: "UT1 — Introducció a Spring"
 date: 2026-10-08
-status: "Esborrany per revisar"
+status: "Revisat"
+reviewed: 2026-10-08
 ---
 
 # UT1 — Introducció a Spring
@@ -20,7 +21,11 @@ En aquesta unitat estudiam com Spring gestiona els objectes i les seves dependè
 
 Els exemples segueixen el fil del code along: motors i dependències, comptadors i tickets, carrets amb una factory, peticions i sessions, inicialització diferida, cicle de vida i consulta de l'hora del servidor.
 
+En acabar, has de poder seguir una petició des del controlador fins als objectes que utilitza, justificar quina dependència s'injecta i predir quan es crea, es reutilitza i es finalitza cada bean. Comprovar una resposta és el punt de partida; explicar-la a partir del codi és l'objectiu.
+
 Els fragments mostren les classes o les parts que expliquen cada concepte. Quan s'ometen el paquet, els imports o altres parts del controlador, s'han d'afegir segons l'organització del projecte. Cada classe pública va en un fitxer amb el mateix nom. Les variants introductòries permeten comparar comportaments; el text indica quan tornam a la configuració emprada a classe.
+
+La referència és el projecte `unitat1_2627`. Conservam els noms dels seus fitxers, inclosos `Unitat1Contoller`, `ShopingCartService` i `ShopingCartFactory`. Les variants d'una mateixa classe substitueixen temporalment la versió anterior: no s'han d'afegir com a classes duplicades. Els casos d'altres biblioteques i la connexió amb la pràctica d'informes són exemples d'aplicació dels conceptes, no components presents en aquest projecte.
 
 ## Índex
 
@@ -39,6 +44,8 @@ Els fragments mostren les classes o les parts que expliquen cada concepte. Quan 
 **Spring Framework** és un conjunt de llibreries Java que facilita la construcció d'aplicacions. Ofereix suport per a diferents necessitats: gestionar objectes, atendre peticions web, treballar amb dades o coordinar transaccions, entre d'altres.
 
 La seva base és el contenidor IoC, que estudiam dins **Spring Core**. Aquest contenidor crea i configura els objectes de l'aplicació que li hem declarat i hi proporciona les dependències que necessiten. Dos conceptes expliquen aquesta manera de treballar: la **inversió de control**, o IoC, i la **injecció de dependències**, o DI.
+
+Anomenam **bean** un objecte gestionat per aquest contenidor. Per exemple, `@Component` permet que Spring detecti una classe pròpia i en registri una definició de bean. La classe és el tipus; el bean és l'objecte gestionat. Amb aquesta distinció ja podem llegir els primers exemples; a l'apartat 4 veurem les formes de declarar-los.
 
 **Spring Boot** facilita la preparació i l'arrencada d'aplicacions basades en Spring. Aporta configuració automàtica segons les dependències i la configuració de l'aplicació, i agrupa dependències habituals en starters. A l'aplicació web que desenvolupam també facilita executar un servidor integrat.
 
@@ -78,6 +85,29 @@ public class Unitat1Contoller {
 `@RestController` declara un controlador que escriu el resultat del mètode al cos de la resposta. `@GetMapping("/")` relaciona una petició HTTP GET a `/` amb `holaMon()`. Si executam el projecte amb el port habitual, podem visitar `http://localhost:8080/`.
 
 En aquests primers exemples retornam text. La lògica que genera la resposta s'executa al servidor; el navegador en rep el resultat.
+
+### El projecte i el recorregut d'una petició
+
+El `pom.xml` del projecte declara Java 25, Spring Boot 4.1.1 i el starter de Spring Web MVC. Cal obrir `unitat1_2627` com a projecte Maven, emprar un JDK compatible amb aquesta configuració i executar `Unitat12627Application`. La configuració actual només fixa el nom de l'aplicació; no activa lazy global ni canvia el port per defecte.
+
+```text
+Navegador -- GET /cotxe --> servidor web integrat
+   -> Spring MVC localitza el mètode associat a /cotxe
+   -> Unitat1Contoller.conduirCotxe()
+   -> CotxeService.conduir() -> Cotxe.engega() -> Motor.engega()
+   -> el text retornat s'envia al navegador com a resposta HTTP
+```
+
+| Paquet dins `cat.paucasesnovescifp.unitat1_2627` | Què hi trobam? |
+|---|---|
+| `controller` | Rutes HTTP i delegació als serveis. |
+| `service` | Operacions que utilitzen els components. |
+| `domain` | Objectes dels exemples: cotxe, motors, comptadors, tickets i altres components. |
+| `config` | Configuració explícita del formatador de data i hora. |
+
+En aquest projecte introductori no hi ha repositoris, base de dades ni plantilles HTML. El paquet `domain` agrupa també components de demostració: estar dins aquest paquet no converteix una classe en una entitat persistent. `@RestController` retorna aquí text, no una vista ni necessàriament JSON.
+
+Per observar cada exemple, mantenim obertes la consola de l'aplicació i la resposta del navegador. Repetir una petició conserva el context; reiniciar l'aplicació el torna a crear i reinicia l'estat dels exemples. Si modificam una anotació, reiniciam abans de comparar els resultats.
 
 ## 2. Inversió de control: IoC
 
@@ -270,6 +300,8 @@ public class Cotxe {
 
 Si hi ha un bean `Gps`, Spring invoca `setGps(...)`. Si no hi és, `required = false` permet ometre aquesta injecció i el camp conserva el valor inicial `null`. `engega()` contempla tots dos casos. Aquesta és la configuració de `Cotxe` emprada a classe: component al paquet `domain`, motor de benzina seleccionat explícitament i GPS opcional.
 
+En el projecte actual, `Gps` duu `@Component` i, per tant, s'injecta. Per observar l'alternativa sense GPS, podem retirar temporalment aquesta anotació i reiniciar; després la restauram. `required = false` permet l'absència, però no resol una ambigüitat entre diversos candidats.
+
 El servei rep el cotxe i coordina l'operació de conduir:
 
 ```java
@@ -342,13 +374,16 @@ L'anotació no programa la responsabilitat de la classe. Marcar un controlador n
 
 Quan Spring ha de crear un bean, consulta les dependències declarades i obté els beans compatibles per proporcionar-les-hi. Aquesta resolució pot implicar crear altres objectes abans de completar el primer.
 
-Per exemple, en l'aplicació de l'hora hi haurà aquesta cadena de col·laboració:
+Per exemple, ja hem vist aquesta cadena de col·laboració:
 
 ```text
-Unitat1Contoller -> HoraService -> RellotgeServidor -> DateTimeFormatter
+Unitat1Contoller -> CotxeService -> Cotxe -> MotorBenzina
+                                       -> Gps
 ```
 
 Cada classe rep els col·laboradors que necessita. Les crides als mètodes continuen sent crides Java ordinàries; Spring ha preparat els objectes i les seves connexions.
+
+Cal separar **la preparació dels objectes** de **l'atenció d'una petició**. Spring pot construir i connectar aquests beans a l'arrencada; rebre `/cotxe` fa executar els mètodes sobre els objectes preparats, sense tornar a injectar-los a cada crida.
 
 ## 5. Scopes: quantes instàncies hi ha i quan es reutilitzen
 
@@ -557,34 +592,21 @@ La ruta `/cart/factory` segueix `CartController → ShopingCartService → Shopi
 
 La factory pot ser singleton: conserva el proveïdor, no un carret per reutilitzar. Cada invocació de `createCart()` fa una petició nova. El proveïdor respecta l'scope del bean; la creació d'instàncies diferents correspon a `@Scope("prototype")`.
 
+El camp `provider` és `public final` al projecte. La resta del codi utilitza `createCart()`; declarar el camp `private final` seria una millora d'encapsulació que no canviaria el comportament de l'exemple.
+
+Aquest `ShoppingCart` només conté un UUID per distingir instàncies. No conserva productes ni representa un carret d'usuari entre peticions: cada crida a la factory en crea un de nou. Per conservar una compra caldria dissenyar on guardar-ne l'estat, per exemple en una sessió o amb persistència. A més, `ObjectProvider` no força sempre una instància nova: si canviàssim el bean a singleton, `getObject()` retornaria la instància compartida.
+
 #### Aplicació al cas dels informes
 
-La mateixa idea serveix per a `ReportJob`, un treball d'informe prototype que ha de ser nou a cada generació. Els serveis de generació són singleton: injectar-hi un `ReportJob` directament faria que el conservassin.
+Com a trasllat a la pràctica d'informes, la mateixa idea serveix per a `ReportJob`, un treball prototype que ha de ser nou a cada generació. `ReportJob` i `ReportJobFactory` no formen part de `unitat1_2627`: són el disseny que aplicam a aquella pràctica. Els serveis de generació són singleton; injectar-hi un treball directament faria que el conservassin.
 
-El disseny de la solució encapsula el proveïdor dins `ReportJobFactory`:
-
-```java
-@Component
-public class ReportJobFactory {
-    private final ObjectProvider<ReportJob> provider;
-
-    public ReportJobFactory(ObjectProvider<ReportJob> provider) {
-        this.provider = provider;
-    }
-
-    public ReportJob createJob() {
-        return provider.getObject();
-    }
-}
-```
-
-El servei rep la factory per constructor i, dins cada generació, obté el treball amb:
+La factory equivalent rep `ObjectProvider<ReportJob>` i el seu mètode `createJob()` retorna `provider.getObject()`. El servei rep la factory per constructor i, dins cada generació, obté el treball amb:
 
 ```java
 ReportJob job = reportJobFactory.createJob();
 ```
 
-`ReportJob` s'ha de declarar com a bean prototype. La factory és una classe simple que amaga el mecanisme específic de Spring i permet que els serveis es limitin a demanar un treball nou, sense utilitzar directament `ObjectProvider`. Aquest fragment trasllada als informes la mateixa idea que hem vist amb els carrets.
+La declaració de `ReportJob` com a prototype és la que garanteix un treball nou. La factory concentra la petició a Spring i permet que els serveis no utilitzin directament `ObjectProvider`.
 
 ### 5.4. Request: una instància per petició HTTP
 
@@ -627,6 +649,8 @@ El servei declara explícitament `@Scope("singleton")`, tot i que ja és el valo
 
 El servei conserva el proxy. El proxy no es reemplaça en el camp del servei a cada petició; quan invocam `getId()`, localitza la instància corresponent a la petició actual. A `/request`, peticions successives mostren UUIDs diferents. Accedir al bean fora d'una petició activa no disposa d'aquest scope.
 
+`ScopedProxyMode.TARGET_CLASS` indica que el proxy es basa en la classe del bean. Per permetre aquesta intermediació, en aquests exemples la classe i el mètode que cridam no han de ser `final`. El camp `private final RequestBean requestBean` sí que pot ser-ho: conserva la referència al proxy.
+
 ### 5.5. Session: una instància per sessió HTTP
 
 Una sessió HTTP permet conservar estat entre diverses peticions d'un mateix client. En el cas habitual, el navegador envia una galeta amb l'identificador de sessió i el servidor reconeix la sessió corresponent.
@@ -664,6 +688,8 @@ public class SessionService {
 ```
 
 També necessitam un proxy perquè el servei singleton pugui delegar en la instància de la sessió activa. A `/session`, les peticions de la mateixa sessió mostren el mateix UUID; una sessió diferent en mostra un altre.
+
+L'UUID mostrat és un valor creat pel nostre `SessionBean`, no l'identificador de la galeta de sessió. Ens permet reconèixer la instància del bean; el servidor gestiona separadament la identificació de la sessió HTTP.
 
 Per comparar sessions, podem emprar navegadors diferents o perfils que no comparteixin galetes. Obrir una altra pestanya del mateix navegador normalment conserva la sessió. Una sessió no equival necessàriament a un usuari autenticat i pot acabar per caducitat o invalidació.
 
@@ -726,7 +752,7 @@ public class HeavyService {
 
 En aquesta variant sense `@Lazy`, Spring crea `HeavyBean` durant l'arrencada. El retard és al constructor de **`HeavyBean`**, i `HeavyService` necessita aquest objecte per completar la seva construcció. La crida posterior a `/lazy`, que delega en `doWork()`, ja troba el component preparat: el nom de la ruta, per si sol, no activa la inicialització diferida.
 
-L'espera i el tractament de la interrupció són una simplificació docent per fer visible el temps de creació.
+L'espera fa visible el temps de creació. El `catch` reprodueix el projecte, però només imprimeix l'error i continua com si la preparació s'hagués completat. Com a millora per a codi real, caldria restaurar la interrupció amb `Thread.currentThread().interrupt()` i interrompre la inicialització, per exemple llançant una `IllegalStateException` amb la causa.
 
 ### 6.3. `@Lazy` al bean
 
@@ -786,6 +812,8 @@ El retard ha d'estar a la inicialització. Si posàssim `Thread.sleep(...)` dins
 ### 6.5. Inicialització diferida global amb Spring Boot
 
 El code along utilitza `@Lazy` al bean i al punt d'injecció. Com a variant de configuració, podem aplicar el mateix criteri de manera global; el component `Warmup` següent és un exemple per explicar-ne una excepció.
+
+**Ampliació:** ni la propietat següent ni `Warmup` són presents al projecte actual. No els necessitam per reproduir `/lazy`.
 
 Podem habilitar la inicialització diferida de manera global a `src/main/resources/application.properties`:
 
@@ -896,6 +924,8 @@ La ruta `/report` d'`Unitat1Contoller` delega en `ReportService.generateReport()
 En aquest exemple, `ReportGenerator` és una classe concreta per mostrar aquests callbacks. A la pràctica d'informes, el mateix nom identifica una interfície amb diverses implementacions. Cal distingir la funció que té en cada cas.
 
 ### 7.3. Què podem fer als mètodes de cicle de vida?
+
+Els casos següents donen context a les dues anotacions. No cal instal·lar aquestes tecnologies per seguir el code along: `ReportGenerator` només escriu missatges. La idea que cal retenir és preparar un recurs quan el component s'inicialitza i alliberar-lo quan acaba la seva vida, si aquest component n'és responsable. Un `@PostConstruct` s'executa durant la inicialització del bean; no garanteix que tota l'aplicació ja estigui preparada per atendre peticions.
 
 #### Casos d'ús de `@PostConstruct`
 
@@ -1113,3 +1143,31 @@ Els exemples d'IDs i de temps permeten observar el resultat, però l'explicació
 - `@PostConstruct` prepara una instància després de la injecció, no abans de cada petició.
 - `@PreDestroy` depèn de la finalització gestionada i no cobreix automàticament la destrucció dels prototypes.
 - Un mètode `@Bean` registra l'objecte que retorna i en concentra la configuració.
+
+### 9.3. Com comprovar els exemples
+
+Aquesta és una pauta per revisar el projecte, amb la configuració original i sense altres peticions simultànies. Abans de cada comprovació, prediu el resultat i identifica la línia de codi que el justifica.
+
+| Comprovació | Resultat esperat i explicació que has de poder donar |
+|---|---|
+| Arrenca i visita `/` i `/cotxe`. | `hola mon`; després, el text de conducció amb motor de benzina i GPS. El qualificador selecciona el motor i el setter rep el GPS disponible. |
+| Visita `/singleton` dues vegades després d'arrencar. | `A 1B 2` i `A 3B 4`: tots dos serveis comparteixen el comptador. |
+| Visita `/prototype` dues vegades. | Dos IDs diferents entre si, però la mateixa parella a les dues respostes: el servei conserva els tickets. |
+| Repeteix `/cart/direct` i `/cart/factory`. | UUID estable a la primera ruta i variable a la segona. Localitza en quin moment es demana el carret a Spring. |
+| Repeteix `/request` i `/session`; després obre `/session` en un altre perfil de navegador. | L'UUID de petició canvia; el de sessió es conserva fins que uses una altra sessió. |
+| Reinicia i visita `/lazy` dues vegades. | La primera crida espera aproximadament cinc segons i mostra els missatges de construcció; la segona reutilitza el bean. |
+| Observa la consola des de l'arrencada, visita `/report` dues vegades i atura l'aplicació ordenadament. | Constructor i `init()` a l'arrencada, `Informe generat!` a cada resposta i `cleanup()` en tancar el context. |
+| Visita `/hora` en dos moments separats per uns segons. | La data i l'hora s'actualitzen amb el mateix patró; el formatador es reutilitza. |
+
+Les rutes actuals permeten comparar peticions diferents. Per observar explícitament que un bean request es reutilitza **dins una mateixa petició**, una variant de prova és cridar `requestService.getRequestBeanId()` dues vegades dins el mètode `request()` i retornar tots dos valors: han de coincidir. En una petició posterior, canvia la parella. Aquesta variant no està implementada al projecte de referència.
+
+### 9.4. Si el resultat no és l'esperat
+
+| Símptoma | Què convé revisar? |
+|---|---|
+| No es pot crear un bean perquè falta una dependència. | Que la implementació estigui registrada, dins la cerca de components i amb un tipus compatible. |
+| Hi ha diversos candidats per a una dependència. | Que `@Primary` o el `@Qualifier` del punt d'injecció resolguin la selecció. Fer-la opcional no resol l'ambigüitat. |
+| `/lazy` ja no mostra el retard. | Si ja s'ha utilitzat el bean des de l'última arrencada; després, les dues ubicacions de `@Lazy` i les dependències que en puguin forçar la creació. |
+| `/session` canvia d'UUID a cada petició. | Si el client conserva i reenvia la galeta de sessió, si la sessió ha caducat o si s'ha reiniciat el servidor. |
+
+Una resposta diferent de la prevista s'ha d'explicar relacionant configuració, moment de creació i referències conservades. Canviar anotacions sense aquesta explicació no permet distingir un error d'una variació esperable de l'exemple.

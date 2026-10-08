@@ -44,6 +44,8 @@ Els missatges de consola són part de les demostracions de creació i destrucci�
 
 ### Revisió dels apunts per al curs 2026–2027
 
+**Estat actual, 2026-10-08:** després de la revisió de coherència, David Pons indica marcar `introduccio-a-spring.md` com a **revisat** i generar-ne el DOCX editable i el PDF per a l'alumnat. Ambdós fitxers es desen al costat del Markdown; el PDF s'exporta del DOCX amb LibreOffice i té 30 pàgines A4. El [[../../materials/0613-desenvolupament-web-entorn-servidor/UT1/README.md|README dels materials vigents]] identifica cada document, el generador i les comprovacions de contingut i maquetació. Les entrades següents documenten fases anteriors de redacció; les referències a un esborrany pendent d'exportar són històriques.
+
 **Criteri final de document autònom, 2026-10-08:** per reiteració del professor, també s'han retirat les referències bibliogràfiques i els enllaços tècnics dins els apartats dels apunts. Els casos reals es presenten en dues llistes amb subtítols explícits per a `@PostConstruct` i `@PreDestroy`. La procedència queda documentada aquí i a la fitxa del code along; el text d'alumnat segueix el fil d'una única aplicació.
 
 **Referència actualitzada dels exemples, 2026-10-08:** després de la primera redacció i les revisions següents, el professor ha aportat el [[code-along-ut1-2627|projecte impartit `unitat1_2627`]]. Els apunts s'han sincronitzat amb aquesta còpia de classe: noms, rutes, mètodes, sortides i separació de domini, serveis i controladors. Les decisions descrites a continuació documenten l'evolució editorial; la font original es conserva i les còpies de preparació ja no determinen els exemples actuals. `ProvaHashController` queda exclòs segons la indicació expressa del professor.

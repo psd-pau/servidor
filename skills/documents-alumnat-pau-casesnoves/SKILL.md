@@ -42,9 +42,13 @@ La identitat compartida amb les presentacions procedeix de la plantilla del cent
 
 Usa **A4 vertical**, amb marges orientatius de 2,2 cm i espai reservat per capçalera i peu. Cos de 11 pt, interlineat aproximat d'1,15 i separació de 6 pt després de paràgraf. Prefereix alineació esquerra; no introdueixis espais manuals per justificar text.
 
-En documents breus, usa una capçalera inicial compacta amb logotip, títol, mòdul i autoria. En dossiers llargs, pot convenir una portada amb títol de 24–28 pt. No hi afegeixis una portada buida de contingut per rutina. Un índex és útil si facilita navegar; si és automàtic, actualitza'l abans d'exportar i comprova'n els números.
+En documents breus, usa una capçalera inicial compacta amb logotip, títol, mòdul i autoria. En dossiers llargs, pot convenir una portada amb títol de 24–28 pt. No hi afegeixis una portada buida de contingut per rutina.
 
-Defineix **estils reals del processador de textos**: títol, subtítol, encapçalaments jeràrquics, cos, llistes, codi, peu i llegenda. Mides orientatives: encapçalament 1 de 17–19 pt, encapçalament 2 de 13–15 pt, encapçalament 3 d'11–12 pt. Usa «mantén amb el següent» als encapçalaments i control de línies vídues/orfes. No converteixis cada secció en una pàgina nova.
+Quan el document inclogui un **índex**, situa'l en una **pàgina dedicada**, separat de la presentació i del primer apartat. Les entrades han de ser **clicables tant al DOCX com al PDF**, amb enllaços interns als encapçalaments corresponents; els marcadors laterals del PDF complementen l'índex, però no el substitueixen. Si l'índex és automàtic o inclou números de pàgina, actualitza els camps abans d'exportar i comprova'n les destinacions i la numeració. Si és extens, reserva-hi les pàgines necessàries sense barrejar-hi contingut dels apartats.
+
+Defineix **estils reals del processador de textos**: títol, subtítol, encapçalaments jeràrquics, cos, llistes, codi, peu i llegenda. Mides orientatives: encapçalament 1 de 17–19 pt, encapçalament 2 de 13–15 pt, encapçalament 3 d'11–12 pt. Usa «mantén amb el següent» als encapçalaments i control de línies vídues/orfes.
+
+En apunts i dossiers organitzats en grans blocs, comença **cada apartat principal en una pàgina nova**, preferentment amb la propietat «salt de pàgina abans» del seu encapçalament. Aplica-ho als grans apartats del contingut —per exemple, els blocs 1–9 dels apunts de Spring—, no a cada subapartat ni a la presentació integrada a la portada. Evita simular salts amb paràgrafs buits o duplicar salts explícits i propietats d'estil que generin pàgines en blanc.
 
 Peu discret amb `David Pons · CIFP Pau Casesnoves` i **camp automàtic de número de pàgina**. Capçalera interior amb títol abreujat o mòdul si ajuda a identificar pàgines impreses. Evita repetir tota l'autoria que el Markdown pugui dur al primer paràgraf si ja s'ha incorporat a la composició inicial.
 
@@ -87,7 +91,7 @@ Comprova el resultat observable, no només que existeixin els fitxers:
 1. Contrast de contingut amb les fonts Markdown: seccions, exemples, taules, codi, referències i respostes conservats. Les adaptacions autoritzades s'han d'identificar.
 2. DOCX vàlid amb estils, taules i text editable, autoria correcta i imatges incrustades. Evita sintaxi Markdown residual com `**`, delimitadors de taula o wikilinks sense convertir.
 3. PDF exportat del DOCX actual, amb mida de pàgina prevista, text seleccionable, enllaços útils i sense pàgines buides inesperades. Les seccions horitzontals han de mantenir mida A4.
-4. Revisió visual de portada/capçalera inicial, pàgina densa, taula ampla, codi i darrera pàgina, i altres pàgines on s'observin incidències. Comprova marges, salts, numeració, fonts, retalls i llegibilitat.
+4. Revisió visual de portada/capçalera inicial, índex, inicis d'apartats principals, pàgina densa, taula ampla, codi i darrera pàgina, i altres pàgines on s'observin incidències. Comprova marges, salts, numeració, fonts, retalls i llegibilitat. Verifica que l'índex ocupi pàgina pròpia i que cada enllaç intern del DOCX i del PDF apunti a l'apartat correcte.
 
 Si disposes d'eines de renderització, genera vistes temporals per inspeccionar-les. Si la revisió visual o l'exportació no són possibles, indica exactament què s'ha comprovat i què queda pendent; no donis per fetes comprovacions gràfiques.
 

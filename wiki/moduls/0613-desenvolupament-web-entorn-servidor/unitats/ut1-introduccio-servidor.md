@@ -17,9 +17,9 @@ El marc curricular inclou model client-servidor, eines, generació dinàmica i i
 
 ## Materials i code along
 
-La [[../../../fonts/materials-ut1-2526|fitxa dels materials d'U1]] enllaça el PDF de 28 pàgines, el projecte `unitat1.zip`, els dos esquemes MVC i el document d'estructura de projectes. També relaciona cada bloc teòric amb les classes i rutes HTTP del projecte.
+La [[../../../fonts/materials-ut1-2526|fitxa dels materials d'U1]] enllaça el PDF de 30 pàgines, el projecte `unitat1.zip`, els dos esquemes MVC i el document d'estructura de projectes. També relaciona cada bloc teòric amb les classes i rutes HTTP del projecte.
 
-**Esborrany d'apunts, 2026-10-08:** [[../../../../materials/0613-desenvolupament-web-entorn-servidor/UT1/introduccio-a-spring.md|Introducció a Spring en Markdown]] desenvolupa els blocs del PDF original i els actualitza amb precisions sobre DI, scopes, proxies, lazy i cicle de vida, més `ObjectProvider` amb factory i l'exemple `/hora`. És un primer intent de material d'alumnat per revisar abans de generar-ne DOCX i PDF. La fitxa de materials registra la correspondència amb les pàgines originals i els canvis editorials.
+**Apunts revisats, 2026-10-08:** [[../../../../materials/0613-desenvolupament-web-entorn-servidor/UT1/introduccio-a-spring.md|Introducció a Spring en Markdown]] desenvolupa els blocs del PDF original i els actualitza amb precisions sobre DI, scopes, proxies, lazy i cicle de vida, més `ObjectProvider` amb factory i l'exemple `/hora`. Per indicació de David Pons, es marca com a revisat i se'n generen el [[../../../../materials/0613-desenvolupament-web-entorn-servidor/UT1/introduccio-a-spring.docx|DOCX editable]] i el [[../../../../materials/0613-desenvolupament-web-entorn-servidor/UT1/introduccio-a-spring.pdf|PDF de 30 pàgines per a l'alumnat]], amb la skill del centre i llengua `ca-ES`. La fitxa de materials conserva l'evolució editorial, i el README d'UT1 documenta la funció dels fitxers i el circuit de regeneració.
 
 El fil dels exemples va de `Cotxe` i `Motor` per explicar dependències a comptadors i tickets per als scopes, UUIDs de petició i sessió, un bean d'inicialització costosa i un generador d'informes amb hooks de cicle de vida. És el repertori present als materials, sense fixar sessions ni donar per impartida aquesta seqüència el curs actual.
 
@@ -28,6 +28,8 @@ El fil dels exemples va de `Cotxe` i `Motor` per explicar dependències a compta
 **Confirmació del professor, 2026-10-08:** `materials/0613-desenvolupament-web-entorn-servidor/UT1/unitat1_2627/` és el code along realitzat a classe enguany. La [[../../../fonts/code-along-ut1-2627|fitxa del projecte impartit]] documenta les classes i rutes. Els apunts en Markdown s'han adaptat a `CotxeService → Cotxe`, `CartController → ShopingCartService → ShopingCartFactory`, la ruta `/lazy`, `ReportService.generateReport()` i `HoraConfiguration`, amb `/hora` dins `Unitat1Contoller`. Es conserven els noms exactes dels fitxers i les sortides observables. `ProvaHashController` queda exclòs per indicació expressa del professor.
 
 La confirmació identifica contingut treballat a classe, sense fixar-ne la seqüència exacta o donar per demostrada l'adquisició dels CA per l'alumnat. `ReportJobFactory` continua com a disseny de la pràctica, mentre que el code along implementa la factory de carrets. Les còpies descrites a continuació es mantenen com a antecedents de preparació.
+
+**Revisió crítica dels apunts, 2026-10-08:** s'ha comprovat la coherència amb el codi de referència i s'han reforçat la introducció de beans, el recorregut HTTP, la separació entre preparació d'objectes i execució de peticions, i la distinció de variants i ampliacions. El final dels apunts proposa comprovacions amb resultats esperats i diagnòstic de discrepàncies, sense donar-les per realitzades. La fitxa del projecte registra l'abast de la revisió estàtica i les millores de codi identificades; no s'ha executat ni modificat el projecte Java.
 
 ### Projecte de preparació `UT1_2627`: `ObjectProvider`, `@Configuration` i `@Bean`
 
