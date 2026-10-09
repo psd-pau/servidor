@@ -4,7 +4,7 @@ author: David Pons
 title: "UT2 — Accés a dades amb Spring"
 date: 2026-10-08
 date_modified: 2026-10-09
-status: "En elaboració"
+status: "Revisat"
 ---
 
 # UT2 — Accés a dades amb Spring
@@ -81,7 +81,7 @@ L'ORM continua executant SQL i la base de dades continua aplicant les seves rest
 
 ### 1.4. Com encaixen JPA, Hibernate i Spring Data JPA?
 
-Les tres peces col·laboren, però cadascuna té una funció:
+Les peces principals col·laboren, però cadascuna té una funció:
 
 | Peça | Funció |
 |---|---|
@@ -347,6 +347,8 @@ Una **entitat** és una classe del model que JPA pot gestionar i de la qual pot 
 
 La classe necessita `@Entity`, un identificador i un constructor sense arguments `public` o `protected` perquè JPA pugui crear-ne instàncies en recuperar les dades. També pot tenir altres constructors per facilitar la creació d'objectes des de l'aplicació. L'entitat ha de ser una classe no `final`; els camps persistents tampoc no han de ser `final`.
 
+A `Book`, el constructor buit s'escriu explícitament. A `Course`, `Student` i `Teacher`, com que no s'hi declara cap constructor, Java proporciona el constructor buit per defecte. Si hi afegim un constructor amb paràmetres, haurem de declarar també el constructor buit perquè es mantengui aquest requisit de JPA.
+
 En aquest exemple, les anotacions són damunt els **camps**. JPA hi accedeix directament, inclosos els camps privats; els getters i setters permeten que la resta del codi treballi amb l'objecte. Aquesta és la modalitat d'accés per camps. Col·locar el mapatge damunt els getters correspon a una altra modalitat, l'accés per propietats; al nostre projecte mantenim el mapatge per camps.
 
 Les anotacions de persistència provenen de `jakarta.persistence`. `Book` combina els atributs següents:
@@ -569,6 +571,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     // Aquí afegirem les consultes específiques dels llibres.
 }
 ```
+
+`JpaRepository` s'importa de `org.springframework.data.jpa.repository.JpaRepository`.
 
 Els dos paràmetres de `JpaRepository<T, ID>` indiquen **l'entitat gestionada** (`Book`) i **el tipus del seu identificador** (`Long`). El code along té quatre repositoris:
 
@@ -897,6 +901,8 @@ List<Book> findBooksPublishedInYear(@Param("year") int year);
 
 `Book` és l'entitat; `b` és un àlies per referenciar-la; `b.publishedDate` és el camp Java. `SELECT b` retorna entitats `Book`. `YEAR(...)` extreu l'any de la data i `:year` és el paràmetre que volem comparar. `@Param("year")` vincula l'argument Java amb el nom de la consulta.
 
+Els imports són `org.springframework.data.jpa.repository.Query` i `org.springframework.data.repository.query.Param`. Aquestes dues anotacions són de Spring Data, no de `jakarta.persistence`.
+
 `repo.findBooksPublishedInYear(2017)` retorna els llibres publicats aquell any. El projecte funciona amb Hibernate i H2, que admeten aquesta expressió. `YEAR` és una forma admesa per Hibernate; abans de traslladar aquesta consulta a un altre proveïdor JPA cal revisar la compatibilitat de les funcions.
 
 La segona consulta JPQL retorna un recompte:
@@ -1143,7 +1149,7 @@ course.setTeacher(teacher);       // Costat propietari.
 teacher.getCourses().add(course); // Coherència de la vista inversa en memòria.
 ```
 
-JPA no afegeix automàticament el curs a totes les llistes que ja tenguem carregades. El mètode `assignTeacher` modifica el costat propietari i permet persistir l'enllaç; en una lectura nova des de la BD, la col·lecció inversa es recuperarà a partir d'aquell enllaç. Si necessitam continuar treballant immediatament amb totes dues instàncies, hem de sincronitzar-les. Un canvi de professor també requereix retirar el curs de la col·lecció anterior si la mantenim en memòria, tenint en compte l'efecte d'`orphanRemoval` que veurem més endavant.
+JPA no afegeix automàticament el curs a totes les llistes que ja tenguem carregades. El mètode `assignTeacher` modifica el costat propietari i permet persistir l'enllaç; en una lectura nova des de la BD, la col·lecció inversa es recuperarà a partir d'aquell enllaç. Si necessitam continuar treballant immediatament amb totes dues instàncies, hem de sincronitzar-les. L'exemple anterior mostra una primera assignació. Reassignar un curs ja vinculat requereix revisar el model: amb `orphanRemoval = true`, retirar-lo de la col·lecció del professor anterior pot provocar que s'elimini, com veurem a l'apartat 8.8.
 
 També existeix **`@OneToMany` unidireccional**. Com a exemple addicional, un departament podria tenir empleats sense que `Employee` tengués un camp `department`:
 
