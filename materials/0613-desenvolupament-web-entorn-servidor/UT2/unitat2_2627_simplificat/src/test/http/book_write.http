@@ -1,0 +1,46 @@
+# AMPLIACIÓ DE PERSISTÈNCIA: crear, modificar i eliminar dades.
+# Parteix d'una arrencada nova i executa en ordre.
+# Aquest fitxer modifica els llibres inicials: reinicia abans de book_read.http.
+# Les restriccions es proven separadament a book_constraints.http.
+
+### Crear un llibre nou (200)
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "Domain-Driven Design",
+  "author": "Eric Evans",
+  "isbn": "9780321125217",
+  "publishedDate": "2003-08-30",
+  "genre": "SCIENCE"
+}
+
+### Crear un altre llibre (200)
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "The Myth of Sisyphus",
+  "author": "Albert Camus",
+  "isbn": "9780679733737",
+  "publishedDate": "1942-01-01",
+  "genre": "ESSAY"
+}
+
+### Actualització completa del llibre 1 (200)
+PUT http://localhost:8080/books/1
+Content-Type: application/json
+
+{
+  "title": "Clean Code (Updated Edition)",
+  "author": "Robert C. Martin",
+  "isbn": "9780132350884",
+  "publishedDate": "2008-08-01",
+  "genre": "SCIENCE"
+}
+
+### Eliminar el llibre 20 (200)
+DELETE http://localhost:8080/books/20
+
+### Eliminar el llibre 21 (200)
+DELETE http://localhost:8080/books/21

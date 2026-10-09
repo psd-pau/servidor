@@ -20,6 +20,7 @@ Generació dinàmica, estructures de control, manteniment d'estat, seguretat, MV
 
 ## Materials, avaluació i millores
 
+- Progressió docent concretada per David Pons, 2026-10-09: la unitat final integrarà les parts treballades al mòdul —infraestructura Spring, persistència, serveis web i aplicació/presentació—. Les versions [[../../../fonts/code-along-ut2-2627-simplificat|simplificada d'UT2]] i [[../../../fonts/code-along-ut2-2627|ampliada amb DTO i tractament REST]] documenten dos nivells d'un mateix fil; són suport per preparar aquesta integració, sense donar per definit ni impartit el projecte final.
 - Registre d'aula: les activitats i els instruments s'hi anotaran quan es facin. L'aplicació integrada és un exemple orientatiu de la wiki.
 - Cal construir una matriu CA–activitat–evidència per evitar que un únic lliurament amagui la cobertura de `RA2` a `RA5` i `RA8`.
 - [[../../../fonts/servidor-master-2526|Font de partida]] · [[../desenvolupament|Desenvolupament]].

@@ -10,6 +10,8 @@ lang: ca-ES
 
 La [[code-along-ut2-2627|proposta per al curs 2026–2027]] deriva d'aquesta font i recupera millores de la còpia antiga. El projecte actual és a `materials/0613-desenvolupament-web-entorn-servidor/UT2/unitat2_2627/`; els apartats de comparació següents descriuen els originals, que es conserven sense corregir.
 
+**Concreció de nivell per a UT2, 2026-10-09:** el professor demana una [[code-along-ut2-2627-simplificat|versió simplificada centrada en entitats i repositoris]], amb serveis i controladors mínims. `unitat2_2627_simplificat` és la proposta docent per a UT2; `unitat2_2627` es conserva íntegre com a versió ampliada per preparar UT3 i la integració final. La canonicitat de la font històrica no canvia.
+
 L'arrel Maven real és `unitat_2_ordinador_profe/unitat2/unitat2/`, on hi ha el [[../../materials-anteriors/0613-desenvolupament-web-entorn-servidor/UT2/unitat_2_ordinador_profe/unitat2/unitat2/pom.xml|`pom.xml`]]. A la carpeta superior `unitat2/` hi ha configuració d'IntelliJ (`.idea/`); el projecte també conserva `target/` amb classes compilades i recursos. S'han inventariat els originals sense modificar-los. La presència de classes compilades no acredita que les rutes i les consultes del codi font actual funcionin.
 
 La comparació pren com a referència `unitat_2_classe2526/`, el [[code-along-ut2-2526|projecte històric utilitzat per redactar els apunts]]. S'han comparat totes les classes Java, els POM, els recursos, les peticions HTTP i els fitxers de suport. Per comparar les classes s'han normalitzat els salts de línia i el canvi de paquet `cat.paucasesnoves.unitat_2` → `cat.paucasesnoves.unitat2` en còpies temporals, fora dels materials. Les diferències de comentaris i format s'han separat dels canvis de comportament.

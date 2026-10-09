@@ -2,13 +2,15 @@
 lang: ca-ES
 ---
 
-# UT2 — Proposta de code along 2026–2027
+# Projecte ampliat 2026–2027 — Reserva per a UT3 i integració final
+
+**Concreció posterior de David Pons, 2026-10-09:** aquesta primera proposta incorpora DTO i tractament de l'API que es treballaran a UT3. Es conserva íntegrament, amb el codi, README i les proves existents, per preparar aquestes ampliacions i la integració final. La [[code-along-ut2-2627-simplificat|versió simplificada `unitat2_2627_simplificat`]] és ara la proposta de referència per a UT2, centrada en entitats i repositoris. La comparació i la validació següents descriuen el projecte ampliat.
 
 ## Decisió del professor i estat
 
 **Decisió directa de David Pons, 2026-10-09:** `unitat_2_ordinador_profe` passa a ser la [[code-along-ut2-ordinador-profe|font històrica canònica]]. El professor confirma que `unitat_2_classe2526` és anterior, amb les referències del 2 i del 14 d'octubre, i demana combinar-ne les millors parts. Per a HTTP concreta la progressió: exemple senzill primer i fitxers més complexos com a ampliació, conservant-los tots.
 
-S'ha creat `materials/0613-desenvolupament-web-entorn-servidor/UT2/unitat2_2627/` amb una **proposta de versió definitiva del projecte**. El [[../../materials/0613-desenvolupament-web-entorn-servidor/UT2/unitat2_2627/README.md|README]] documenta les decisions, l'arrencada, els fitxers HTTP, el contracte i la progressió. La proposta està compilada i provada; encara no és un registre de projecte impartit a classe. Els originals es conserven.
+La primera proposta preparada és `materials/0613-desenvolupament-web-entorn-servidor/UT2/unitat2_2627/`. El [[../../materials/0613-desenvolupament-web-entorn-servidor/UT2/unitat2_2627/README.md|README original de la proposta]] documenta les decisions, l'arrencada, els fitxers HTTP, el contracte i la progressió. Està compilada i provada; per la concreció posterior del professor es conserva com a versió ampliada. No és un registre de projecte impartit a classe. Els originals es conserven.
 
 ## Integració i correccions
 
@@ -43,6 +45,6 @@ Els fitxers Java de prova són `Unitat2ApplicationTests` i `CodeAlongIntegration
 
 ## Relació amb els apunts
 
-Els [[../../materials/0613-desenvolupament-web-entorn-servidor/UT2/acces-a-dades-amb-spring.md|apunts Markdown]] es mantenen sense canvis de contingut durant aquesta preparació. La següent revisió els haurà d'alinear amb el nou projecte: identificador `Long`, rutes disponibles, `Page`, SQL natiu corregit, validació i errors, i representació de relacions amb DTO. Les explicacions introductòries i la càrrega de dades continuen sent aplicables. Aquesta font diferencia la proposta actual dels exemples encara procedents de la primera còpia.
+Els [[../../materials/0613-desenvolupament-web-entorn-servidor/UT2/acces-a-dades-amb-spring.md|apunts Markdown]] es mantenen sense canvis de contingut durant aquesta preparació. La següent revisió d'UT2 els haurà d'alinear amb la versió simplificada: identificador `Long`, rutes disponibles, `Page`, SQL natiu corregit i proves de relacions. Les explicacions introductòries i la càrrega de dades continuen sent aplicables. DTO, validació i tractament elaborat d'errors d'aquesta versió s'han de reservar per preparar els materials de serveis web, segons la decisió del professor.
 
 **Fonts oficials de contrast:** [consultes de Spring Data JPA 3.5](https://docs.spring.io/spring-data/jpa/reference/3.5/jpa/query-methods.html), [inicialització de dades de Spring Boot 3.5](https://docs.spring.io/spring-boot/3.5/how-to/data-initialization.html), [proves d'aplicacions de Spring Boot 3.5](https://docs.spring.io/spring-boot/3.5/reference/testing/spring-boot-applications.html) i [injecció per constructor de Spring Framework](https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired.html). El contrast s'acompanya ara d'execució de la proposta local, no de les fonts històriques.

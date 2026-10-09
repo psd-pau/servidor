@@ -12,6 +12,8 @@ L'objectiu és que l'alumnat construeixi aplicacions web funcionals i, sobretot,
 
 El projecte resolt és la referència de preparació del professor. La construcció progressiva a l'aula és el fil que introdueix i relaciona els conceptes; els apunts i esquemes hi donen suport. Per preparar futurs materials, cal tenir presents tant les classes necessàries com l'ordre de construcció i els punts d'aturada per a les explicacions, quan el professor els concreti.
 
+**Progressió concretada per David Pons, 2026-10-09:** a UT2 el focus és la persistència, especialment entitats i repositoris. Els serveis i controladors són el suport mínim per fer les proves i observar els resultats, seguint la separació per capes introduïda a UT1. A UT3 s'introdueixen DTO i disseny de l'API REST, amb el tractament dels mètodes i les respostes. La unitat final uneix les parts en una aplicació integrada. Les bones pràctiques s'incorporen progressivament: no s'ha de carregar una unitat amb tota la infraestructura de les següents. La [[fonts/code-along-ut2-2627-simplificat|versió simplificada d'UT2]] concreta aquesta decisió; el projecte ampliat es conserva com a reserva d'exemples. És una decisió docent sobre la seqüència, no una reformulació dels RA.
+
 ## Avaluació: casos de resposta oberta en paper
 
 **Decisió docent directa de David Pons, 2026-10-07:** el grup és **IFC33C** i els exàmens plantegen un problema que s'ha de resoldre amb resposta oberta en paper. S'hi avalua que l'alumnat sap identificar quines eines, anotacions, llibreries i conceptes treballats a la UT necessita a cada part i aplicar-los correctament. Aquesta concreció amplia la decisió d'exàmens en paper recollida a la [[presentacio-modul|presentació inicial]].

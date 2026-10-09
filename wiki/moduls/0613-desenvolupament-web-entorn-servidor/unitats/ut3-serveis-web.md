@@ -17,6 +17,7 @@ Protocols, formats d'intercanvi, arquitectures i eines de prova/documentació. A
 
 ## Materials, avaluació i millores
 
+- Progressió docent concretada per David Pons, 2026-10-09: DTO, disseny de l'API REST, ús dels mètodes HTTP i tractament coherent de respostes i errors s'introduiran a UT3. El [[../../../fonts/code-along-ut2-2627|projecte ampliat `unitat2_2627`]] es conserva com a reserva d'exemples per preparar-ho; la [[../../../fonts/code-along-ut2-2627-simplificat|versió simplificada d'UT2]] només usa l'HTTP com a suport per provar persistència. És una pauta de preparació, no un registre de continguts impartits ni un projecte complet d'UT3 ja definit.
 - Registre d'aula: les activitats i els instruments s'hi anotaran quan es facin. L'API i el client consumidor són exemples orientatius de la wiki.
 - Cal separar evidències de creació/consum del servei (`RA7`) de les de reutilització, repositoris o processament d'informació (`RA9`), inclosa la part d'empresa.
 - [[../../../fonts/servidor-master-2526|Font de partida]] · [[../desenvolupament|Desenvolupament]].

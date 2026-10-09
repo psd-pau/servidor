@@ -1,5 +1,15 @@
 # Log
 
+## [2026-10-09] clarification | Versió de referència per generar la teoria d'UT2
+
+David Pons confirma `materials/0613-desenvolupament-web-entorn-servidor/UT2/unitat2_2627_simplificat/` com a versió de referència per generar els materials teòrics de l'alumnat d'UT2 a partir de `acces-a-dades-amb-spring.md`. Les futures revisions dels exemples i les explicacions s'han de contrastar amb aquest projecte, mantenint el focus en entitats i repositoris i la progressió cap a UT3 ja acordada. S'actualitzen el README de context, la [[fonts/code-along-ut2-2627-simplificat|fitxa del projecte]], la fitxa d'UT2 i l'índex. Aquesta confirmació actualitza només el context: els apunts i el codi es mantenen sense canvis, i no es registra cap sessió impartida ni exportació.
+
+## [2026-10-09] materials | Versió simplificada d'UT2 i progressió cap a UT3 i integració final
+
+**Verificació addicional:** 40 peticions dels sis fitxers HTTP executades amb cURL, incloses les dues demostracions de restriccions, i comprovació de noms en relacions i recomptes de paginació; consola H2 amb 200. Hashes del projecte complet i dels apunts sense canvis. Els quatre repositoris i el mapatge JPA es conserven; només es retiren les anotacions no JPA de `Book`. Enllaços locals comprovats.
+
+David Pons concreta que UT2 ha de focalitzar entitats i repositoris, amb serveis i controladors senzills per fer les comprovacions; DTO i disseny REST es treballaran a UT3 i la unitat final integrarà les parts. S'ha creat `materials/0613-desenvolupament-web-entorn-servidor/UT2/unitat2_2627_simplificat/` i la [[fonts/code-along-ut2-2627-simplificat|fitxa corresponent]], conservant el projecte complet sense modificar-lo. Es mantenen tots els repositoris, camps i anotacions JPA, dades i consultes; de `Book` només es retiren les anotacions de validació i Jackson introduïdes a la primera proposta. La versió té 14 classes de producció, sense DTO, validador HTTP ni gestor d'excepcions propi. Els controladors deleguen al servei i retornen llibres, IDs o noms; universitat conserva la transacció per carregar col·leccions i assigna les relacions des del costat propietari. Els fitxers HTTP es conserven adaptats, amb una demostració addicional de restriccions de persistència. `mvn verify` amb 10 proves superades de dades inicials, CRUD, consultes, paginació, restriccions, relacions, cascada i `orphanRemoval`. S'han actualitzat orientació docent, índex, les fitxes d'UT2–UT4, desenvolupament, fonts i README dels materials. És una proposta de preparació, sense sessions impartides, exportacions ni reescriptura dels apunts teòrics.
+
 ## [2026-10-09] materials | Font canònica i proposta de code along d'UT2 per a 2026–2027
 
 **Resultat de les comprovacions addicionals:** 38 peticions dels cinc fitxers HTTP executades amb cURL amb els estats esperats, resolent els IDs d'universitat des de les respostes. Reinici verificat amb retorn als 21 llibres originals i universitat buida; servidors de prova aturats. Enllaços locals verificats, 121 fitxers de les fonts originals intactes i hash dels apunts sense canvis. Aquesta comprovació no és una execució dels scripts dins IntelliJ.

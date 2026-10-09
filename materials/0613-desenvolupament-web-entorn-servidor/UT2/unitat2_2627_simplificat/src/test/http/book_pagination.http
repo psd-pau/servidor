@@ -1,0 +1,34 @@
+# AMPLIACIÓ OPCIONAL: demostrar el límit de 5 amb un autor que té 6 llibres.
+# Parteix d'una arrencada nova: Robert C. Martin ja té 3 llibres.
+# Els tres llibres següents són dades inventades per provar la paginació.
+# Reinicia quan acabis per recuperar exactament els 21 llibres originals.
+
+### Afegir quart llibre de demostració
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{"title":"Demostració 4","author":"Robert C. Martin","isbn":"0000000000101","genre":"SCIENCE"}
+
+### Afegir cinquè llibre de demostració
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{"title":"Demostració 5","author":"Robert C. Martin","isbn":"0000000000102","genre":"SCIENCE"}
+
+### Afegir sisè llibre de demostració
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{"title":"Demostració 6","author":"Robert C. Martin","isbn":"0000000000103","genre":"SCIENCE"}
+
+### Pageable limita a 5 i ordena per ID
+GET http://localhost:8080/books/author/Robert%20C.%20Martin/top5
+
+### SQL natiu dona els mateixos 5 si passam el nom complet de l'autor
+GET http://localhost:8080/books/author/Robert%20C.%20Martin/nativeTop5
+
+### Primera pàgina: 5 resultats
+GET http://localhost:8080/books/author/Robert%20C.%20Martin/page?page=0&size=5
+
+### Segona pàgina: 1 resultat
+GET http://localhost:8080/books/author/Robert%20C.%20Martin/page?page=1&size=5
