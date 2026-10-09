@@ -1,0 +1,69 @@
+# RELACIONS: executa en ordre després d'una arrencada nova.
+# Els blocs de resposta d'IntelliJ guarden els IDs realment generats.
+# Els DTO eviten publicar les referències inverses i la recursió JSON.
+
+### Crear professor (201)
+POST http://localhost:8080/university/teachers
+Content-Type: application/json
+
+{
+  "fullName": "David Pons",
+  "department": "Informàtica"
+}
+
+> {%
+    client.global.set("teacherId", response.body.id);
+%}
+
+### Crear primera estudiant (201)
+POST http://localhost:8080/university/students
+Content-Type: application/json
+
+{
+  "fullName": "Aina Riera",
+  "email": "aina@example.test"
+}
+
+> {%
+    client.global.set("studentId1", response.body.id);
+%}
+
+### Crear segon estudiant (201)
+POST http://localhost:8080/university/students
+Content-Type: application/json
+
+{
+  "fullName": "Marc Vidal",
+  "email": "marc@example.test"
+}
+
+> {%
+    client.global.set("studentId2", response.body.id);
+%}
+
+### Crear curs i les seves relacions (201)
+POST http://localhost:8080/university/courses
+Content-Type: application/json
+
+{
+  "name": "Desenvolupament web en entorn servidor",
+  "credits": 6,
+  "teacherId": {{teacherId}},
+  "studentIds": [{{studentId1}}, {{studentId2}}]
+}
+
+> {%
+    client.global.set("courseId", response.body.id);
+%}
+
+### Consultar cursos del professor (un curs amb dos estudiants)
+GET http://localhost:8080/university/courses/teacher/David%20Pons
+
+### Consultar estudiants del curs (2)
+GET http://localhost:8080/university/courses/{{courseId}}/students
+
+### Cerca recuperada de la còpia antiga: ignora majúscules (Aina Riera)
+GET http://localhost:8080/university/students/search?keyword=AINA
+
+### Compatibilitat amb els camins de la còpia antiga
+GET http://localhost:8080/api/university/courses/teacher/name/David%20Pons

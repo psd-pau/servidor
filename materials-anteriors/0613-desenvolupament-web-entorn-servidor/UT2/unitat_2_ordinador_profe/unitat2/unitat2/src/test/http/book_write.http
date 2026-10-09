@@ -1,0 +1,57 @@
+###  CREAR UN LLIBRE NOU
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "Domain-Driven Design",
+  "author": "Eric Evans",
+  "isbn": "9780321125217",
+  "publishedDate": "2003-08-30",
+  "genre": "SCIENCE"
+}
+
+---
+
+###  CREAR UN ALTRE LLIBRE (assaig)
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "The Myth of Sisyphus",
+  "author": "Albert Camus",
+  "isbn": "9780679733737",
+  "publishedDate": "1942-01-01",
+  "genre": "ESSAY"
+}
+
+---
+
+###  ACTUALITZAR UN LLIBRE EXISTENT (suposem ID = 1)
+PUT http://localhost:8080/books/1
+Content-Type: application/json
+
+{
+  "title": "Clean Code (Updated Edition)",
+  "author": "Robert C. Martin",
+  "isbn": "9780132350884",
+  "publishedDate": "2008-08-01",
+  "genre": "SCIENCE"
+}
+
+---
+
+###  ACTUALITZAR UN LLIBRE EXISTENT (ISBN ja existent dona error, el deixam buit o en posam un de diferent)
+PUT http://localhost:8080/books/2
+Content-Type: application/json
+
+{
+  "isbn": "9781617294945"
+}
+
+---
+
+###  ELIMINAR UN LLIBRE (suposem ID = 20)
+DELETE http://localhost:8080/books/20
+
+###  ELIMINAR UN ALTRE LLIBRE (suposem ID = 21)
+DELETE http://localhost:8080/books/21

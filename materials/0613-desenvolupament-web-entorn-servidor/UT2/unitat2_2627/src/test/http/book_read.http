@@ -1,0 +1,35 @@
+# AMPLIACIÓ: consultes de la còpia del professor.
+# Els resultats comentats pressuposen una arrencada nova amb els 21 llibres inicials.
+
+### Obtenir tots els llibres (21)
+GET http://localhost:8080/books
+
+### Obtenir llibre per ID
+GET http://localhost:8080/books/1
+
+### Cerca per ISBN (Clean Code)
+GET http://localhost:8080/books/isbn/9780132350884
+
+### Cerca per autor exacte (3 llibres)
+GET http://localhost:8080/books/author/Robert%20C.%20Martin
+
+### Cinc primers per autor, ordenats per ID (hi ha 3 llibres)
+GET http://localhost:8080/books/author/J.K.%20Rowling/top5
+
+### Cerca per fragment de títol (2 llibres)
+GET http://localhost:8080/books/search/title?keyword=Spring
+
+### Cerca per gènere, data descendent (2 llibres)
+GET http://localhost:8080/books/genre/POETRY
+
+### Cerca per any (Effective Java i Clean Architecture)
+GET http://localhost:8080/books/year/2017
+
+### Recompte per autor i gènere (3)
+GET http://localhost:8080/books/count?author=J.K.%20Rowling&genre=NOVEL
+
+### SQL natiu: fragment d'autor (2 llibres)
+GET http://localhost:8080/books/author/Harari/nativeTop5
+
+### Ampliació de Page: 2 resultats, totalElements=3 i totalPages=2
+GET http://localhost:8080/books/author/Robert%20C.%20Martin/page?page=0&size=2

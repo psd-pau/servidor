@@ -1,0 +1,37 @@
+# PRIMER EXEMPLE: CRUD senzill, recuperat de unitat_2_classe2526.
+# Executa les cinc peticions en ordre després d'una arrencada nova.
+# data.sql crea els llibres 1..21: el primer llibre nou tindrà ID 22.
+# Reinicia abans de repetir aquest fitxer o d'emprar un altre exemple d'escriptura.
+
+### 1. Crear (201)
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "Prova",
+  "author": "David",
+  "isbn": "0780130449135",
+  "publishedDate": "2025-01-01",
+  "genre": "NOVEL"
+}
+
+### 2. Obtenir tots els llibres (22 registres)
+GET http://localhost:8080/books
+
+### 3. Actualitzar tots els camps editables del llibre nou (200)
+PUT http://localhost:8080/books/22
+Content-Type: application/json
+
+{
+  "title": "Prova actualitzada",
+  "author": "David Pons",
+  "isbn": "0780130449135",
+  "publishedDate": "2025-05-15",
+  "genre": "NOVEL"
+}
+
+### 4. Llegir el llibre actualitzat (200)
+GET http://localhost:8080/books/22
+
+### 5. Eliminar-lo (204; queden 21 llibres)
+DELETE http://localhost:8080/books/22

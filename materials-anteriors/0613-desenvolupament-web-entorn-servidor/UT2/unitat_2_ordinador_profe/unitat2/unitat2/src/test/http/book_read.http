@@ -1,0 +1,31 @@
+###  OBTENIR TOTS ELS LLIBRES
+GET http://localhost:8080/books
+
+###  OBTENIR LLIBRE PER ID
+GET http://localhost:8080/books/1
+
+---
+
+###  CERCA PER ISBN (Clean Code)
+GET http://localhost:8080/books/isbn/9780132350884
+
+###  CERCA PER AUTOR (Robert C. Martin → 3 llibres)
+GET http://localhost:8080/books/author/Robert%20C.%20Martin
+
+###  CERCA TOP 5 PER AUTOR (J.K. Rowling → 3 llibres)
+GET http://localhost:8080/books/author/J.K.%20Rowling/top5
+
+###  CERCA PER TÍTOL (conté "Spring")
+GET http://localhost:8080/books/search/title?keyword=Spring
+
+###  CERCA PER GÈNERE (POETRY → 2 llibres)
+GET http://localhost:8080/books/genre/POETRY
+
+###  CERCA PER ANY DE PUBLICACIÓ (2017 → Effective Java + Clean Architecture)
+GET http://localhost:8080/books/year/2017
+
+###  COMPTAR LLIBRES PER AUTOR I GÈNERE (J.K. Rowling, NOVEL → 3)
+GET http://localhost:8080/books/count?author=J.K.%20Rowling&genre=NOVEL
+
+###  CERCA TOP 5 PER AUTOR (Nativa, Harari → 2 llibres)
+GET http://localhost:8080/books/author/Yuval%20Noah%20Harari/nativeTop5

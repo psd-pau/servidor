@@ -1,0 +1,67 @@
+# AMPLIACIÓ: escriptures de la còpia del professor, amb els exemples corregits.
+# Parteix d'una arrencada nova i executa en ordre.
+# Aquest fitxer modifica els llibres inicials: reinicia abans de book_read.http.
+
+### Crear un llibre nou (201)
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "Domain-Driven Design",
+  "author": "Eric Evans",
+  "isbn": "9780321125217",
+  "publishedDate": "2003-08-30",
+  "genre": "SCIENCE"
+}
+
+### Crear un altre llibre (201)
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "The Myth of Sisyphus",
+  "author": "Albert Camus",
+  "isbn": "9780679733737",
+  "publishedDate": "1942-01-01",
+  "genre": "ESSAY"
+}
+
+### Actualització completa del llibre 1 (200)
+PUT http://localhost:8080/books/1
+Content-Type: application/json
+
+{
+  "title": "Clean Code (Updated Edition)",
+  "author": "Robert C. Martin",
+  "isbn": "9780132350884",
+  "publishedDate": "2008-08-01",
+  "genre": "SCIENCE"
+}
+
+### ISBN duplicat: la resta de camps són vàlids (409)
+# L'ISBN pertany al llibre 4, Spring in Action. El llibre 2 no s'ha de modificar.
+PUT http://localhost:8080/books/2
+Content-Type: application/json
+
+{
+  "title": "Clean Architecture",
+  "author": "Robert C. Martin",
+  "isbn": "9781617294945",
+  "publishedDate": "2017-09-20",
+  "genre": "SCIENCE"
+}
+
+### Cos incomplet: PUT no és una actualització parcial (400)
+# Aquest cas s'ha separat de la demostració d'unicitat.
+PUT http://localhost:8080/books/2
+Content-Type: application/json
+
+{
+  "isbn": "9781617294945"
+}
+
+### Eliminar el llibre 20 (204)
+DELETE http://localhost:8080/books/20
+
+### Eliminar el llibre 21 (204)
+DELETE http://localhost:8080/books/21
