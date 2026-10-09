@@ -17,6 +17,8 @@ Protocols, formats d'intercanvi, arquitectures i eines de prova/documentació. A
 
 ## Materials, avaluació i millores
 
+- Antecedent d'avaluació: [[../../../fonts/examens-2526#UT3 — API REST|examen d'UT3 del curs 2025–2026]], capa REST de restaurants amb DTO (2 punts), mapper (2), GET/POST amb 200/201 (4) i error 404 (2), sobre servei ja donat. La capçalera diu UT2 per discrepància de l'original; la fitxa ho documenta. No inclou consum de serveis ni una evidència específica de `RA9`. Referència històrica, sense fixar el nou examen.
+
 - Progressió docent concretada per David Pons, 2026-10-09: DTO, disseny de l'API REST, ús dels mètodes HTTP i tractament coherent de respostes i errors s'introduiran a UT3. El [[../../../fonts/code-along-ut2-2627|projecte ampliat `unitat2_2627`]] es conserva com a reserva d'exemples per preparar-ho; la [[../../../fonts/code-along-ut2-2627-simplificat|versió simplificada d'UT2]] només usa l'HTTP com a suport per provar persistència. És una pauta de preparació, no un registre de continguts impartits ni un projecte complet d'UT3 ja definit.
 - Registre d'aula: les activitats i els instruments s'hi anotaran quan es facin. L'API i el client consumidor són exemples orientatius de la wiki.
 - Cal separar evidències de creació/consum del servei (`RA7`) de les de reutilització, repositoris o processament d'informació (`RA9`), inclosa la part d'empresa.

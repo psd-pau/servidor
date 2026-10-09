@@ -99,6 +99,8 @@ El cas nou és `GET /hora`: `HoraController → HoraService → RellotgeServidor
 
 ## Seguiment i avaluació
 
+Antecedent disponible: [[../../../fonts/examens-2526#UT1 — Spring Core|examen d'UT1 del curs 2025–2026]], cas TechShop amb cinc parts de 2 punts sobre injecció, dependència opcional, carret de sessió, inicialització diferida i cicle de vida. La fitxa enllaça el DOCX original i diferencia el carret de sessió de l'exemple actual de beans `prototype`. És una referència històrica, no una prova del curs actual.
+
 Hi ha una [[../../../fonts/practica-ut1-reports-2526|pràctica de Spring Core sobre gestió d'informes]], amb enunciat i proposta de solució del curs anterior. Reuneix interfícies i generadors, DI, scopes, cache, cicle de vida i inicialització diferida en un mateix cas. La fitxa documenta també les diferències entre els requisits i el codi rebut.
 
 El professor l'ha aportada com a activitat per practicar: complementa el code along i prepara l'examen, amb ponderació zero segons el criteri general del mòdul.
