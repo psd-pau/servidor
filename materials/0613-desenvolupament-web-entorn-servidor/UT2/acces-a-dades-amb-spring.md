@@ -3,7 +3,7 @@ lang: ca-ES
 author: David Pons
 title: "UT2 — Accés a dades amb Spring"
 date: 2026-10-08
-date_modified: 2026-10-09
+date_modified: 2026-10-10
 status: "Revisat"
 ---
 
@@ -1060,6 +1060,10 @@ id (PK) <---------------------- teacher_id (FK)
 ```
 
 A `Course`, el camp `Teacher teacher` representa l'associació amb el professor. La BD desa el seu identificador a `COURSE.teacher_id`; a Java podem navegar amb `course.getTeacher().getFullName()`. La col·lecció `List<Student> students` representa els estudiants del curs, mentre que a la BD els enllaços es desen a `ENROLLMENT`.
+
+![Esquema del projecte unitat2_2627_simplificat: claus de TEACHER, COURSE, ENROLLMENT i STUDENT, i correspondència amb els costats propietaris i inversos de les relacions Java.](recursos/relacions-universitat.png)
+
+*Figura 2. Claus i propietat de les relacions al projecte `unitat2_2627_simplificat`. Les fletxes van de la clau forana a la clau referenciada; `mappedBy` sempre conté un nom Java.*
 
 Una anotació de relació descriu **quantes entitats es poden associar**, mirant des de la classe on s'escriu:
 

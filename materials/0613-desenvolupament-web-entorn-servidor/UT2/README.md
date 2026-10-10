@@ -4,7 +4,7 @@ lang: ca-ES
 
 # Materials de la UT2 — Curs 2026–2027
 
-La font de teoria és [acces-a-dades-amb-spring.md](acces-a-dades-amb-spring.md), amb estat **Revisat** des del 2026-10-09. S'ha revisat íntegrament com a material autònom per a l'alumnat, contrastant-lo amb el code along simplificat i l'examen d'UT2 del curs 2025–2026. El dossier DOCX i el PDF encara no s'han generat.
+La font de teoria és [acces-a-dades-amb-spring.md](acces-a-dades-amb-spring.md), amb estat **Revisat** des del 2026-10-09. S'ha revisat íntegrament com a material autònom per a l'alumnat, contrastant-lo amb el code along simplificat i l'examen d'UT2 del curs 2025–2026. Des del 2026-10-10 disposa de [DOCX editable](acces-a-dades-amb-spring.docx) i [PDF per a l'alumnat, de 48 pàgines](acces-a-dades-amb-spring.pdf), exportat d'aquest mateix DOCX i revisat.
 
 L'esborrany es va iniciar amb el [code along `unitat_2_classe2526`](../../../wiki/fonts/code-along-ut2-2526.md). El 2026-10-09 el professor confirma que [unitat_2_ordinador_profe](../../../wiki/fonts/code-along-ut2-ordinador-profe.md) és posterior i el designa com a **font històrica canònica**; totes dues fonts es conserven a `materials-anteriors/`. La [fitxa de la UT2](../../../wiki/moduls/0613-desenvolupament-web-entorn-servidor/unitats/ut2-acces-dades.md) conté la traçabilitat amb `RA6` i els criteris d'avaluació.
 
@@ -28,6 +28,24 @@ La [fitxa de configuració i dades d'exemple](../../../wiki/fonts/dades-exemple-
 
 **Revisió de coherència i idoneïtat completada, 2026-10-09:** contingut adequat al focus d'UT2 i coherent amb les entitats, els quatre repositoris, els serveis, les rutes, la configuració i les dades del projecte simplificat. S'han fet petits aclariments sobre constructors implícits, imports de Spring Data i reassignació amb eliminació d'orfes, i s'ha corregit una referència al nombre de peces de persistència. El contrast amb l'examen històric s'ha fet llegint `materials-anteriors/0613-desenvolupament-web-entorn-servidor/Examens2526/Examen unitat 2.docx`. Els suggeriments s'han comunicat només a la resposta al professor. Revisió documental i comprovacions estàtiques; no s'han tornat a executar JUnit ni les peticions HTTP. Les execucions dels paràgrafs anteriors corresponen a revisions prèvies.
 
-DTO i disseny elaborat de l'API es reserven per als materials d'UT3. El circuit d'exportació previst és Markdown → DOCX editable → PDF exportat del mateix DOCX, amb la identitat del CIFP Pau Casesnoves i la llengua `ca-ES`.
+DTO i disseny elaborat de l'API es reserven per als materials d'UT3. El circuit d'exportació és Markdown → DOCX editable → PDF exportat del mateix DOCX, amb la identitat del CIFP Pau Casesnoves i la llengua `ca-ES`.
 
-**Suport visual:** [spring-jpa-diagram.png](spring-jpa-diagram.png), aportat el 2026-10-09, s'inclou a l'apartat 1.4 dels apunts. La [fitxa d'inventari del diagrama](../../../wiki/fonts/diagrama-spring-jpa-ut2.md) documenta la procedència coneguda, els rètols i les dimensions (454 × 536 píxels). La imatge es manté al costat del Markdown, que la referencia amb una ruta relativa, text alternatiu i peu en català. En generar el DOCX i el PDF caldrà incorporar-la, conservar-ne les proporcions i verificar la llegibilitat dels rètols; la figura explica també el paper de JDBC i que RDBMS correspon a H2 en l'exemple.
+**Suport visual:** [spring-jpa-diagram.png](spring-jpa-diagram.png), aportat el 2026-10-09, s'inclou a l'apartat 1.4 dels apunts. La [fitxa d'inventari del diagrama](../../../wiki/fonts/diagrama-spring-jpa-ut2.md) documenta la procedència coneguda, els rètols i les dimensions (454 × 536 píxels). La imatge es manté al costat del Markdown, que la referencia amb una ruta relativa, text alternatiu i peu en català. S'ha incrustat al DOCX i al PDF conservant les proporcions i amb els rètols revisats; la figura explica també el paper de JDBC i que RDBMS correspon a H2 en l'exemple.
+
+## Exportació i regeneració dels apunts
+
+**Generació del 2026-10-10:** aplicada la [skill de documents d'alumnat](../../../skills/documents-alumnat-pau-casesnoves/SKILL.md). A4 vertical, autoria David Pons, grup IFC33C i curs 2026–2027. S'empren les fonts **Poppins Semibold**, **Arial** i **DejaVu Sans Mono**, disponibles després de la instal·lació confirmada pel professor. El PDF incorpora les fonts. La llengua de correcció i les metadades del DOCX, i la llengua del PDF etiquetat, són `ca-ES`.
+
+L'índex ocupa la pàgina 2 i té deu enllaços interns verificats als dos formats. Els deu apartats principals comencen en pàgines noves: 3, 6, 8, 9, 14, 22, 27, 35, 45 i 48. Aquestes preferències ja constaven a la skill. La portada integra la presentació; les capçaleres de taula es repeteixen i el peu usa un camp automàtic de pàgina. El text, les llistes, les taules i el codi són editables. Les línies llargues de codi s'ajusten visualment sense introduir salts nous al text de la línia lògica.
+
+Amb l'autorització del professor per afegir suports visuals, s'ha incorporat a 8.1 [un esquema de les relacions d'universitat](recursos/relacions-universitat.png), amb les claus de `TEACHER`, `COURSE`, `ENROLLMENT` i `STUDENT`, els costats propietaris i els noms Java de `mappedBy`. És una elaboració pròpia per a aquests apunts, contrastada amb les tres entitats de `unitat2_2627_simplificat`; el generador en conserva la font editable. El diagrama ASCII anterior es conserva, juntament amb totes les explicacions i exemples. És l'única ampliació docent d'aquesta exportació.
+
+El [generador Java](eines/GeneraApunts.java) no necessita Python ni biblioteques addicionals: requereix un **JDK 17 o posterior**, **LibreOffice** i les tres fonts. Des de l'arrel del repositori:
+
+```bash
+java -Djava.awt.headless=true materials/0613-desenvolupament-web-entorn-servidor/UT2/eines/GeneraApunts.java --sobreescriu
+```
+
+Abans d'usar `--sobreescriu`, revisau si el DOCX té edicions manuals que cal conservar. Sense aquesta opció, el generador s'atura si ja existeix una exportació. Admet `--entrada FITXER`, `--sortida DIRECTORI` i `--libreoffice EXECUTABLE`. Regenera també la figura 2 al directori `recursos/` del Markdown d'entrada. Empra un perfil temporal independent de LibreOffice i només substitueix el PDF després d'una exportació correcta. En aquesta sessió s'ha emprat el JDK d'IntelliJ i s'ha executat el convertidor fora del sandbox perquè aquest n'impedia l'arrencada.
+
+**Revisió:** text complet contrastat amb el Markdown, 39 taules natives i 297 línies literals dels 49 blocs de codi conservades; Open XML analitzable, tres imatges incrustades, autoria i llengua comprovades. PDF actual exportat amb LibreOffice 24.2, amb 48 pàgines A4 numerades, text seleccionable, cap pàgina buida i deu enllaços d'índex amb destinacions correctes. Revisió visual del conjunt i de portada, índex, inicis dels apartats, figures, taules denses, codi i darrera pàgina; límits del text comprovats dins els marges. No s'ha modificat el projecte Java ni repetit les proves de persistència o HTTP: aquesta comprovació correspon a la producció dels documents.
