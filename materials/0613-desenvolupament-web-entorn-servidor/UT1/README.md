@@ -32,6 +32,7 @@ Per indicació expressa del professor, omet `ProvaHashController.java` quan sinc
 | [activitat-spring-core-reports.md](activitat-spring-core-reports.md) | Enunciat de la pràctica del gestor d'informes, separat dels apunts. `ReportJobFactory` és el disseny previst per a la solució d'aquesta pràctica; no és una classe del code along dels carrets. |
 | [activitat-spring-core-reports.docx](activitat-spring-core-reports.docx) | Editable de l'enunciat de la pràctica, ja existent. No s'ha regenerat en aquesta exportació dels apunts. |
 | [activitat-spring-core-reports.pdf](activitat-spring-core-reports.pdf) | PDF de l'enunciat de la pràctica, ja existent. No s'ha regenerat en aquesta exportació dels apunts. |
+| [solucio-practica-reports/](solucio-practica-reports/) | Projecte de solució de la pràctica actual, derivat del ZIP de 2025–2026. |
 
 Context docent i procedència:
 

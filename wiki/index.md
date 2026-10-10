@@ -34,6 +34,7 @@ Base de coneixement de treball per preparar el mòdul `0613. Desenvolupament web
 - [[../materials/0613-desenvolupament-web-entorn-servidor/UT1/introduccio-a-spring.md|Introducció a Spring — apunts revisats 2026–2027]]: teoria contrastada amb `unitat1_2627`, amb [[../materials/0613-desenvolupament-web-entorn-servidor/UT1/introduccio-a-spring.docx|DOCX editable]] i [[../materials/0613-desenvolupament-web-entorn-servidor/UT1/introduccio-a-spring.pdf|PDF de 30 pàgines per a l'alumnat]]. El [[../materials/0613-desenvolupament-web-entorn-servidor/UT1/README.md|README d'UT1]] explica la funció dels fitxers, el context i la regeneració.
 - [[moduls/0613-desenvolupament-web-entorn-servidor/unitats/ut1-introduccio-servidor|U1 del curs actual]]: code along impartit `unitat1_2627`, antecedent de proves `UT1_2627`, comparació de beans `prototype` amb injecció directa i `ObjectProvider`, trasllat a `ReportJobFactory` i exemple de `@Configuration` i `@Bean` amb `GET /hora`.
 - [[fonts/practica-ut1-reports-2526|Pràctica d'U1: gestor d'informes]]: enunciat, proposta de solució i connexió amb els conceptes del code along.
+- [[../materials/0613-desenvolupament-web-entorn-servidor/UT1/solucio-practica-reports/README.md|Solució actual de la pràctica d'informes]]: projecte Spring Boot amb PDF, HTML, CSV, treballs `prototype`, exportació diferida i configuració de `CSVFormat`.
 
 ## Manteniment
 

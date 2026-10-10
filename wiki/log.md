@@ -1,5 +1,11 @@
 # Log
 
+## [2026-10-10] materials | Solució actual de la pràctica d'informes d'UT1
+
+S'ha incorporat a `materials/0613-desenvolupament-web-entorn-servidor/UT1/solucio-practica-reports/` una còpia de treball del projecte del ZIP `materials-anteriors/0613-desenvolupament-web-entorn-servidor/UT1/2526 solucio_practica_1.zip`. Manté el model, la memòria cau, les estadístiques i les rutes originals. La generació usa `ReportJobFactory` amb `ObjectProvider` per obtenir un treball `prototype` per informe, selecció injectada amb `@Primary` i `@Qualifier`, i marca d'aigua opcional abans del generador. S'hi afegeix CSV amb `CSVFormat` declarat a `ReportConfig` i s'ajusta `ExportEngine` perquè s'inicialitzi només a la primera exportació i retorni el contingut de la memòria cau. L'original històric roman intacte. És una proposta de solució docent d'UT1, vinculada a `RA1.c` i `RA1.g`; no registra una activitat impartida.
+
+Verificació: `mvn test` amb Java 25 i Spring Boot 3.5.6; peticions HTTP als tres formats, IDs diferents, recompte compartit, CSV amb capçalera i contingut multilínia entre cometes, exportació dels informes inicials i nous sense alterar el recompte, retard de 10,01 s a la primera exportació i 0,002 s a la segona, i neteja de la memòria cau en aturar l'aplicació. Una prova en una còpia temporal sense el bean `WatermarkService` ha confirmat que el context arrenca, genera CSV sense marca i escapa un contingut amb punt i coma i cometes. En la mateixa còpia, canviar només el delimitador a `ReportConfig` ha produït una capçalera amb comes i ha mantingut l'escapament del contingut.
+
 ## [2026-10-10] materials | DOCX i PDF dels apunts d'UT2
 
 Per encàrrec de David Pons, s'han generat `materials/0613-desenvolupament-web-entorn-servidor/UT2/acces-a-dades-amb-spring.docx` i el PDF de 48 pàgines exportat del mateix DOCX, a partir del Markdown revisat i amb `unitat2_2627_simplificat` com a referència. S'ha aplicat `skills/documents-alumnat-pau-casesnoves/SKILL.md`: A4, identitat del centre, autoria David Pons, IFC33C, curs 2026–2027 i llengua `ca-ES`. Les preferències reiterades d'índex clicable en pàgina pròpia i apartats principals en pàgines noves ja constaven a la skill. Després de la instal·lació de fonts confirmada pel professor, els resultats definitius empren Poppins Semibold, Arial i DejaVu Sans Mono, incrustades al PDF.
