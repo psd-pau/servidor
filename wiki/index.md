@@ -5,6 +5,7 @@ Base de coneixement de treball per preparar el mòdul `0613. Desenvolupament web
 ## Punt de partida
 
 - [[orientacio-docent|Orientació docent]]: code along a totes les unitats a partir de projectes Spring preparats pel professor, arquitectura per capes i pràctiques professionals. És la porta d'entrada a l'enfocament del mòdul.
+- [[orientacio-docent#Temps de disseny dels exàmens|Temps de disseny dels exàmens]]: tots els exàmens de 2026–2027 disposen de tres hores; el disseny de totes les proves manté l'objectiu de 90–115 minuts de resolució, incloses lectura i revisió, amb marge deliberat per a ritmes especialment lents i per evitar la percepció de manca de temps.
 - [[curs-programacio-entorn-servidor|Mòdul 0613. Desenvolupament web en entorn servidor]]: resum del context i tecnologia de referència.
 - [[fonts/servidor-master-2526|Servidor master 2025-2026]]: font original de l'enfocament docent i dels primers materials del mòdul.
 - [[fonts/programacio-didactica-2026-2027|Full de programació d'aula 2026–2027]]: hores, distribució en UT, RA i qualificació; el registre d'activitats s'emplena durant el curs.
@@ -21,6 +22,8 @@ Base de coneixement de treball per preparar el mòdul `0613. Desenvolupament web
 - [[../skills/documents-alumnat-pau-casesnoves/SKILL|Guia de documents per a l'alumnat]]: dossiers, apunts i guies en DOCX i PDF per a IFC33C, amb identitat del centre i suport al code along de Java i Spring.
 - [[../skills/examens-pau-casesnoves/SKILL|Guia d'exàmens en paper]]: plantilla del centre, problemes de resposta oberta i puntuació per parts que avaluen la tria i l'aplicació de les eines treballades.
 - [[fonts/examens-2526|Exàmens del curs 2025–2026, UT1–UT4]]: quatre enunciats DOCX de Spring Core, JPA, API REST i vistes; inventari de requisits i barems sobre 10, correspondència amb les unitats i punts de revisió abans de reutilitzar-los. Originals conservats a `Examens2526/`.
+- [[avaluacio/ut1-revisio-examen-2026-2027|Revisió de l'examen anterior d'UT1]]: contrast de TechShop amb el code along impartit; encaix de les cinc parts, continguts de factory i configuració absents, i propostes per redactar la prova de 2026–2027.
+- [[avaluacio/ut1-proposta-examen-reprografia-2026-2027|Primera proposta d'examen d'UT1: reprografia d'una biblioteca]]: set parts amb puntuació provisional sobre 10; conserva DI, dependència opcional, lazy i cicle de vida i incorpora request amb proxy, factory amb provider i configuració de beans. PDF d'enunciat compactat pel professor a quatre pàgines; solucionari separat en Markdown, DOCX i PDF amb codi, justificacions i correcció.
 
 - [[fonts/materials-ut1-2526|Materials d'U1 del curs anterior]]: apunts de Spring Core, suports d'arquitectura i correspondència amb el projecte de code along.
 - [[fonts/code-along-ut1-2627|Code along d'U1 impartit el curs 2026–2027]]: projecte `unitat1_2627` confirmat pel professor com a codi treballat a classe; classes, rutes i correspondència amb els apunts actualitzats.

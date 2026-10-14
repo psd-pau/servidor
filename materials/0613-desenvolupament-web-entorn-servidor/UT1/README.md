@@ -40,6 +40,28 @@ Context docent i procedència:
 - [Fitxa de la UT1](../../../wiki/moduls/0613-desenvolupament-web-entorn-servidor/unitats/ut1-introduccio-servidor.md): desenvolupament docent i traçabilitat curricular.
 - [Materials d'U1 del curs anterior](../../../wiki/fonts/materials-ut1-2526.md): antecedents i evolució editorial; les anotacions històriques d'esborrany no descriuen l'estat actual dels apunts.
 
+## Primera proposta d'examen: reprografia
+
+Preparada el 2026-10-14 per revisió de David Pons. Context nou; conserva selecció de dependències, dependència opcional, inicialització diferida i cicle de vida. Incorpora request amb proxy, prototype amb factory i provider i configuració de beans; exclou sessió i carret. Barem **provisional**: sis parts d'1,5 punts i configuració d'1 punt, total 10. El temps disponible confirmat és de 3 hores (180 minuts) per llegir i resoldre; data de realització i materials permesos sense fixar; no consta com a aprovada ni realitzada.
+
+| Fitxer | Funció |
+|---|---|
+| [examen-ut1-reprografia-proposta-v1.md](examen-ut1-reprografia-proposta-v1.md) | Font de l'enunciat; els comentaris indiquen salts i espai de resposta. |
+| [examen-ut1-reprografia-proposta-v1.docx](examen-ut1-reprografia-proposta-v1.docx) | Editable sobre la plantilla del centre, UT1, IFC33C i curs 26/27. Comprovar edicions manuals abans de regenerar. |
+| [examen-ut1-reprografia-proposta-v1.pdf](examen-ut1-reprografia-proposta-v1.pdf) | Enunciat compactat pel professor a quatre pàgines el 2026-10-14. Conservar aquesta revisió abans de regenerar. |
+| [examen-ut1-reprografia-proposta-v1-criteris.md](examen-ut1-reprografia-proposta-v1-criteris.md) | Document exclusiu del professorat: barem, CA, evidències i referències de correcció. |
+| [examen-ut1-reprografia-proposta-v1-solucionari.md](examen-ut1-reprografia-proposta-v1-solucionari.md) | Set enunciats amb respostes Java, justificacions, crèdit parcial i alternatives. Font del solucionari en flux continu, sense salts fixos ni espais de resposta. |
+| [examen-ut1-reprografia-proposta-v1-solucionari.docx](examen-ut1-reprografia-proposta-v1-solucionari.docx) i [PDF](examen-ut1-reprografia-proposta-v1-solucionari.pdf) | Versió amb respostes, separada de l'enunciat. PDF exportat d'aquest DOCX. |
+| [eines/GeneraExamenReprografia.java](eines/GeneraExamenReprografia.java) | Generador Java amb XML i ZIP estàndard, sense Python. Parteix de la plantilla i rebutja sobreescriure una sortida existent. |
+
+La [fitxa de preparació](../../../wiki/avaluacio/ut1-proposta-examen-reprografia-2026-2027.md) documenta les decisions i l'abast. El generador pren tres arguments: plantilla DOCX, font Markdown i sortida DOCX. Calcula el curs actual amb Europe/Madrid i deixa la data de realització buida; per a una prova amb data o curs diferents cal adaptar els camps. Exportar amb LibreOffice i un perfil temporal separat, amb PDF etiquetat. Conserva taula, marges, imatge, referències de capçalera i peu i camps automàtics de la plantilla. No usar-lo per regenerar altres tipus de materials.
+
+Per al solucionari, afegeix `--solucionari` com a quart argument: identifica les metadades i el peu, tracta els subencapçalaments i manté els blocs curts de codi amb la seva introducció. El PDF d'enunciat ha estat compactat manualment pel professor; els comentaris de salts i espais del Markdown de la primera proposta no representen aquesta maquetació. No regenerar l'enunciat amb aquests comentaris sense sincronitzar abans la revisió del professor. En generar el solucionari s'han conservat intactes tant el PDF com el DOCX d'enunciat.
+
+**Verificació de la primera exportació, 2026-10-14:** 52 paràgrafs i línies de font íntegres al DOCX i PDF, 14 parts XML vàlides, logotip intacte, autoria i llengua comprovades. Aquella exportació tenia set pàgines A4, un apartat per pàgina i espai de resposta; és l'antecedent de la revisió manual posterior del professor, que ara té quatre pàgines. Codi `MDO20301`, fonts incrustades i puntuacions provisionals comprovades sobre 10.
+
+**Verificació del solucionari, 2026-10-14:** 243 paràgrafs i línies literals íntegres al DOCX i PDF, 14 parts XML vàlides, logotip intacte, autoria David Pons, IFC33C, curs 26/27 i llengua `ca-ES`. PDF etiquetat A4 amb fonts Poppins i DejaVu Sans Mono incrustades i numeració automàtica. Quinze tipus Java compilats amb Spring 7.0.9 en un directori temporal, afegint imports i un contracte simulat de `MarcaAigua`; compilació, sense execució del context.
+
 ## Abans d'editar o regenerar: instruccions per al futur agent
 
 1. Llegeix aquest README, `wiki/index.md`, `wiki/orientacio-docent.md` i les fitxes de context enllaçades. Verifica **el contingut i la funció de cada fitxer** abans d'editar-lo: teoria, enunciat, editable i PDF tenen finalitats diferents encara que comparteixin conceptes.

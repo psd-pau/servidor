@@ -24,6 +24,16 @@ El cas es desglossa en parts puntuades separadament. L'enunciat descriu els requ
 
 La [[../skills/examens-pau-casesnoves/SKILL|skill d'exàmens]] concreta aquest criteri i el format del centre. És una decisió docent, no una prescripció curricular del BOE ni el registre d'una prova ja realitzada. El nom del mòdul es manté fix: **Desenvolupament web en entorn servidor** (0613), denominació curricular del BOE en català. Els materials i les proves treballen amb **Java i Spring**; les eines de generació no depenen de Python, absent en aquest entorn.
 
+### Temps de disseny dels exàmens
+
+**Concreció per al curs 2026–2027, confirmada per David Pons el 2026-10-14:** **tots els exàmens del mòdul disposen de 3 hores (180 minuts)** per llegir i resoldre. A totes les proves, el volum s'ha de dissenyar per a **90–115 minuts de resolució**, incloses lectura i revisió. L'objectiu és deixar prou marge perquè també l'alumnat especialment lent pugui treballar sense percebre manca de temps. La durada de tres hores s'ha confirmat per a aquest curs; el criteri de disseny és el mateix a totes les UT.
+
+**Decisió docent directa de David Pons, 2026-10-14:** dissenyar els exàmens del mòdul per a **90–115 minuts de resolució estimada, incloses lectura i revisió**, encara que l'alumnat disposi de **3 hores (180 minuts)** per llegir i resoldre. El temps disponible i el temps que guia el volum de la prova s'han de registrar separadament.
+
+El professor assenyala que l'alumnat pot ser especialment lent. Segons la seva experiència dels darrers anys, la percepció que el temps és ajustat pot generar queixes importants, que vincula als hàbits i expectatives del context educatiu. El marge és, per tant, una decisió deliberada per atendre aquests ritmes i evitar aquesta pressió percebuda.
+
+En preparar una prova, estima conjuntament lectura, decisions, escriptura manuscrita del codi, justificacions i revisió. Mantén el volum dins els 90–115 minuts estimats i simplifica codi repetitiu quan calgui, preservant les evidències dels RA i CA. No afegeixis tasques o exigències per ocupar les tres hores. El rang orienta el disseny; no implica que tot l'alumnat hagi d'acabar abans dels 115 minuts. Aquest criteri s'aplica a la [[avaluacio/ut1-proposta-examen-reprografia-2026-2027|proposta d'examen de reprografia d'UT1]] i a les proves futures.
+
 ## Fil conductor: responsabilitats clares
 
 La font descriu una arquitectura per capes, anomenada «Clean Architecture light aplicada a Spring»:

@@ -4,6 +4,8 @@ Aquest espai recull la seqüència de les quatre unitats. Les hores i els mesos 
 
 La metodologia comuna és el **code along**: el professor duu un projecte Spring prèviament resolt i en va programant les classes amb l'alumnat, fent pauses per introduir i explicar els conceptes de cada unitat.
 
+**Criteri d'exàmens del curs 2026–2027, confirmat per David Pons el 2026-10-14:** totes les proves disposen de **3 hores (180 minuts)** per llegir i resoldre. El volum de cadascuna s'ha de dissenyar per a **90–115 minuts de resolució**, incloses lectura i revisió, per deixar marge també als ritmes especialment lents i evitar la percepció de manca de temps. Aquesta decisió s'aplica a totes les UT i no altera les hores de les unitats ni les ponderacions dels RA. Vegeu el [[../../orientacio-docent#Temps de disseny dels exàmens|criteri docent general]].
+
 | Unitat | Hores | Mesos previstos | RA |
 |---|---:|---|---|
 | [[unitats/ut1-introduccio-servidor|U1. Introducció a la programació en entorn servidor]] | 20 | Setembre | RA1 |
