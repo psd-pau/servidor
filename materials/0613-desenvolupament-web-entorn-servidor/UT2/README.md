@@ -4,6 +4,14 @@ lang: ca-ES
 
 # Materials de la UT2 — Curs 2026–2027
 
+## Fitxers de suport per distribuir a l'alumnat
+
+La carpeta [fitxers-alumnat/](fitxers-alumnat/) i el [ZIP preparat per pujar a l'aula](fitxers-alumnat.zip) contenen còpies literals d'`application.properties`, `data.sql` i els sis fitxers `.http` de `unitat2_2627_simplificat`, amb les rutes `src/main/resources/` i `src/test/http/`. El README inclòs explica com incorporar-los al projecte. Preparat el 2026-10-16 per petició de David Pons; no es registra com a material ja distribuït.
+
+Si es modifiquen aquests recursos al projecte de referència, cal actualitzar-ne les còpies i regenerar el ZIP des d'aquest directori: `zip -r fitxers-alumnat.zip fitxers-alumnat/`.
+
+## Projectes i apunts de referència
+
 La font de teoria és [acces-a-dades-amb-spring.md](acces-a-dades-amb-spring.md), amb estat **Revisat** des del 2026-10-09. S'ha revisat íntegrament com a material autònom per a l'alumnat, contrastant-lo amb el code along simplificat i l'examen d'UT2 del curs 2025–2026. Des del 2026-10-10 disposa de [DOCX editable](acces-a-dades-amb-spring.docx) i [PDF per a l'alumnat, de 48 pàgines](acces-a-dades-amb-spring.pdf), exportat d'aquest mateix DOCX i revisat.
 
 L'esborrany es va iniciar amb el [code along `unitat_2_classe2526`](../../../wiki/fonts/code-along-ut2-2526.md). El 2026-10-09 el professor confirma que [unitat_2_ordinador_profe](../../../wiki/fonts/code-along-ut2-ordinador-profe.md) és posterior i el designa com a **font històrica canònica**; totes dues fonts es conserven a `materials-anteriors/`. La [fitxa de la UT2](../../../wiki/moduls/0613-desenvolupament-web-entorn-servidor/unitats/ut2-acces-dades.md) conté la traçabilitat amb `RA6` i els criteris d'avaluació.

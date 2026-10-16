@@ -1,0 +1,46 @@
+# RELACIONS JPA: executar en ordre després d'una arrencada nova.
+# Professor, estudiants i curs comencen sense registres.
+# Els IDs de cada entitat són independents: professor 1, estudiants 1 i 2, curs 1.
+# Cada creació retorna només l'ID. Les consultes retornen noms.
+
+### Crear professor (retorna 1)
+POST http://localhost:8080/university/teachers
+Content-Type: application/json
+
+{"fullName":"David Pons","department":"Informàtica"}
+
+### Crear primera estudiant (retorna 1)
+POST http://localhost:8080/university/students
+Content-Type: application/json
+
+{"fullName":"Aina Riera","email":"aina@example.test"}
+
+### Crear segon estudiant (retorna 2)
+POST http://localhost:8080/university/students
+Content-Type: application/json
+
+{"fullName":"Marc Vidal","email":"marc@example.test"}
+
+### Crear curs sense relacions (retorna 1)
+POST http://localhost:8080/university/courses
+Content-Type: application/json
+
+{"name":"Desenvolupament web en entorn servidor","credits":6}
+
+### Assignar professor: Course.teacher determina la clau forana
+POST http://localhost:8080/university/courses/1/teacher/1
+
+### Matricular Aina: Course.students determina ENROLLMENT
+POST http://localhost:8080/university/courses/1/students/1
+
+### Matricular Marc
+POST http://localhost:8080/university/courses/1/students/2
+
+### Consultar cursos pel nom del professor
+GET http://localhost:8080/university/courses/teacher/David%20Pons
+
+### Consultar noms dels estudiants del curs (Aina i Marc)
+GET http://localhost:8080/university/courses/1/students
+
+### Consulta IgnoreCase: ha de trobar Aina
+GET http://localhost:8080/university/students/search?keyword=AINA

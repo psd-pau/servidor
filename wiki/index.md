@@ -16,6 +16,8 @@ Base de coneixement de treball per preparar el mòdul `0613. Desenvolupament web
 
 ## Materials de referència
 
+- [[../materials/0613-desenvolupament-web-entorn-servidor/UT2/fitxers-alumnat/README.md|Fitxers de suport d'UT2 per a l'alumnat]]: configuració, dades SQL i sis fitxers HTTP del projecte simplificat, agrupats amb les rutes de destinació i [[../materials/0613-desenvolupament-web-entorn-servidor/UT2/fitxers-alumnat.zip|ZIP preparat per distribuir]].
+
 - [[presentacio-modul|Presentació del mòdul 2026–2027]]: PPTX i PDF de benvinguda, connexions amb DAW, unitats, RA, hores i criteris d'avaluació.
 
 - [[../skills/presentacions-pau-casesnoves/SKILL|Guia de presentacions del centre]]: colors corporatius, format comú, autoria David Pons i suport al code along.

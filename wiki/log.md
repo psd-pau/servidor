@@ -1,5 +1,9 @@
 # Log
 
+## [2026-10-16] materials | Paquet de fitxers de suport d'UT2 per a l'alumnat
+
+Per petició de David Pons, s'han copiat literalment `application.properties`, `data.sql` i els sis fitxers `.http` de `materials/0613-desenvolupament-web-entorn-servidor/UT2/unitat2_2627_simplificat/` a `UT2/fitxers-alumnat/`, conservant les rutes `src/main/resources/` i `src/test/http/`. S'hi inclou un README en català amb instruccions d'incorporació al projecte i es genera `UT2/fitxers-alumnat.zip`, preparat per pujar a l'alumnat. Es comproven la integritat del ZIP i la igualtat dels vuit recursos amb el projecte de referència. S'enllaça el paquet a l'índex i al README d'UT2. És preparació de materials; no es registra com a distribuït ni s'alteren els projectes de referència.
+
 ## [2026-10-14] clarification | Tots els exàmens de 2026–2027 disposen de tres hores
 
 David Pons confirma que la franja de **3 hores (180 minuts)** per llegir i resoldre s'aplica a **tots els exàmens del mòdul del curs 2026–2027**, no només a UT1. Es manté a totes les proves l'objectiu de disseny de **90–115 minuts de resolució**, incloses lectura i revisió, perquè també l'alumnat especialment lent disposi de marge i no percebi manca de temps. Es concreta l'abast del curs a `AGENTS.md`, l'[[orientacio-docent#Temps de disseny dels exàmens|orientació docent]], l'índex i el desenvolupament operatiu. No es pressuposa aquesta durada per a altres cursos ni es modifiquen enunciats, puntuacions, exportacions o registres de proves realitzades.

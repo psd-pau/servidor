@@ -1,0 +1,26 @@
+# PROVES OPCIONALS DE RESTRICCIONS JPA/BD.
+# Executa amb les dades inicials. Aquestes dues peticions han de fallar sense inserir.
+# Observa la restricció a la consola del servidor o comprova-la amb els tests.
+# Aquesta versió deixa la resposta d'error per defecte (500); el seu tractament és d'UT3.
+
+### ISBN duplicat: pertany a Clean Code
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "Llibre amb ISBN repetit",
+  "author": "Autor de prova",
+  "isbn": "9780132350884",
+  "genre": "SCIENCE"
+}
+
+### Parell títol-autor duplicat, amb un ISBN diferent
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "isbn": "0000000000999",
+  "genre": "SCIENCE"
+}
