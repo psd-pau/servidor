@@ -16,6 +16,8 @@ Base de coneixement de treball per preparar el mòdul `0613. Desenvolupament web
 
 ## Materials de referència
 
+- [[../materials/0613-desenvolupament-web-entorn-servidor/UT1/practica-spring-core-techshop.md|Pràctica extra de repàs d'UT1: TechShop]]: complement per practicar abans de l'examen, basat en l'examen de 2025–2026 i adaptat als continguts d'enguany. La pràctica actual continua sent el [[../materials/0613-desenvolupament-web-entorn-servidor/UT1/activitat-spring-core-reports.md|gestor d'informes]]. TechShop manté les cinc funcionalitats històriques, amb el carret actualitzat a fàbrica i `ObjectProvider`, cinc rutes HTTP i set proves proposades. Només enunciat, en [[../materials/0613-desenvolupament-web-entorn-servidor/UT1/practica-spring-core-techshop.docx|DOCX]] i [[../materials/0613-desenvolupament-web-entorn-servidor/UT1/practica-spring-core-techshop.pdf|PDF]].
+
 - [[../materials/0613-desenvolupament-web-entorn-servidor/UT2/fitxers-alumnat/README.md|Fitxers de suport d'UT2 per a l'alumnat]]: configuració, dades SQL i sis fitxers HTTP del projecte simplificat, agrupats amb les rutes de destinació i [[../materials/0613-desenvolupament-web-entorn-servidor/UT2/fitxers-alumnat.zip|ZIP preparat per distribuir]].
 
 - [[presentacio-modul|Presentació del mòdul 2026–2027]]: PPTX i PDF de benvinguda, connexions amb DAW, unitats, RA, hores i criteris d'avaluació.
